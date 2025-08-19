@@ -9,13 +9,13 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default" # Currently available options are "default", "air"
-title                    : "Your Name / Site Title"
+title                    : "이애본 / Academic Profile"
 title_separator          : "-"
-name                     : &name "Your Name"
-description              : &description "personal description"
-url                      : https://academicpages.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io" or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
+name                     : &name "이애본"
+description              : &description "박사과정 연구자 | AI 및 정보관리 전공 | 직업교육학 전문가"
+url                      : https://aebonlee.github.io
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "academicpages/academicpages.github.io"
+repository               : "aebonlee/aebonlee.github.io"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
@@ -23,13 +23,13 @@ repository               : "academicpages/academicpages.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Your Sidebar Name"
+  name             : "이애본"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
-  employer         : "Red Brick University"
+  bio              : "경영학박사과정 | 정보관리전공 | 직업교육학 전문가"
+  location         : "Seoul, Korea"
+  employer         : "서울벤처대학원대학교"
   uri              : # URL
-  email            : "none@example.org" 
+  email            : # 실제 이메일 주소로 업데이트 필요 
 
   # Academic websites
   academia         : # URL

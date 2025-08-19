@@ -1,87 +1,79 @@
-# Academic Pages
-**Academic Pages is a GitHub Pages template for personal and professional portfolio-oriented websites.**
+# 이애본의 학술 포트폴리오 웹사이트
+
+이 웹사이트는 [Academic Pages template](https://github.com/academicpages/academicpages.github.io)을 기반으로 제작된 개인 학술 포트폴리오입니다.
 
 ![Academic Pages template example](images/homepage.png "Academic Pages template example")
 
-# Getting Started
+## 사이트 정보
 
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Click the "Use this template" button in the top right.
-1. On the "New repository" page, enter your public repository name as "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and add your content.
-1. Upload any files (like PDFs, .zip files, etc.) to the `files/` directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.
-1. Check status by going to the repository settings, in the "GitHub pages" section
-1. (Optional) Use the Jupyter notebooks or python scripts in the `markdown_generator` folder to generate markdown files for publications and talks from a TSV file.
+**학술 연구자**: 이애본  
+**현재 상태**: 서울벤처대학원대학교 경영학박사과정 (정보관리전공)  
+**연구분야**: AI 활용, 정보시스템 관리, 직업교육학  
 
-See more info at https://academicpages.github.io/
+## 주요 내용
 
-## Running locally
+- **About**: 개인 소개 및 연구 관심사
+- **CV**: 상세한 학력 및 경력 사항
+- **Publications**: 연구 논문 및 출판물
+- **Research**: 연구 프로젝트 및 발표
+- **Portfolio**: 학술 활동 포트폴리오
 
-When you are initially working on your website, it is very useful to be able to preview the changes locally before pushing them to GitHub. To work locally you will need to:
+# 시작하기
 
-1. Clone the repository and made updates as detailed above.
+1. GitHub 계정이 없다면 등록하고 이메일 확인 (필수!)
+2. 우측 상단의 "Use this template" 버튼 클릭
+3. "New repository" 페이지에서 "[your GitHub username].github.io"로 공개 저장소 이름 입력 (웹사이트 URL이 됩니다)
+4. 사이트 전체 설정 및 콘텐츠 추가
+5. PDF, .zip 파일 등을 `files/` 디렉토리에 업로드 (https://[your GitHub username].github.io/files/example.pdf로 접근 가능)
+6. 저장소 설정의 "GitHub pages" 섹션에서 상태 확인
+7. (선택사항) `markdown_generator` 폴더의 Jupyter 노트북이나 Python 스크립트를 사용하여 TSV 파일로부터 출판물과 발표에 대한 마크다운 파일 생성
 
-### Using a different IDE
-1. Make sure you have ruby-dev, bundler, and nodejs installed
+자세한 정보: https://academicpages.github.io/
+
+## 로컬에서 실행하기
+
+웹사이트를 처음 작업할 때는 GitHub에 푸시하기 전에 로컬에서 변경사항을 미리보는 것이 매우 유용합니다.
+
+### 다른 IDE 사용하기
+1. ruby-dev, bundler, nodejs가 설치되어 있는지 확인
     
-    On most Linux distribution and [Windows Subsystem Linux](https://learn.microsoft.com/en-us/windows/wsl/about) the command is:
+    대부분의 Linux 배포판과 [Windows Subsystem Linux](https://learn.microsoft.com/en-us/windows/wsl/about)에서 명령어:
     ```bash
     sudo apt install ruby-dev ruby-bundler nodejs
     ```
-    If you see error `Unable to locate package ruby-bundler`, `Unable to locate package nodejs `, run the following:
-    ```bash
-    sudo apt update && sudo apt upgrade -y
-    ```
-    then try run `sudo apt install ruby-dev ruby-bundler nodejs` again.
-
-    On MacOS the commands are:
+    
+    MacOS에서 명령어:
     ```bash
     brew install ruby
     brew install node
     gem install bundler
     ```
-1. Run `bundle install` to install ruby dependencies. If you get errors, delete Gemfile.lock and try again.
 
-    If you see file permission error like `Fetching bundler-2.6.3.gem ERROR:  While executing gem (Gem::FilePermissionError) You don't have write permissions for the /var/lib/gems/3.2.0 directory.` or `Bundler::PermissionError: There was an error while trying to write to /usr/local/bin.`
-    Install Gems Locally (Recommended):
-    ```bash
-    bundle config set --local path 'vendor/bundle'
-    ```
-    then try run `bundle install` again. If succeeded, you should see a folder called `vendor` and `.bundle`.
+2. `bundle install`을 실행하여 ruby 종속성 설치. 오류가 발생하면 Gemfile.lock을 삭제하고 다시 시도.
 
-1. Run `jekyll serve -l -H localhost` to generate the HTML and serve it from `localhost:4000` the local server will automatically rebuild and refresh the pages on change.
-    You may also try `bundle exec jekyll serve -l -H localhost` to ensure jekyll to use specific dependencies on your own local machine.
+3. `jekyll serve -l -H localhost`를 실행하여 HTML을 생성하고 `localhost:4000`에서 서빙. 로컬 서버는 변경사항을 자동으로 감지하여 페이지를 재빌드하고 새로고침합니다.
 
-If you are running on Linux it may be necessary to install some additional dependencies prior to being able to run locally: `sudo apt install build-essential gcc make`
+## Docker 사용하기
 
-## Using Docker
-
-Working from a different OS, or just want to avoid installing dependencies? You can use the provided `Dockerfile` to build a container that will run the site for you if you have [Docker](https://www.docker.com/) installed.
-
-You can build and execute the container by running the following command in the repository:
+다른 OS에서 작업하거나 종속성 설치를 피하고 싶다면, [Docker](https://www.docker.com/)가 설치되어 있는 경우 제공된 `Dockerfile`을 사용할 수 있습니다.
 
 ```bash
 chmod -R 777 .
 docker compose up
 ```
 
-You should now be able to access the website from `localhost:4000`.
+이제 `localhost:4000`에서 웹사이트에 접근할 수 있습니다.
 
-### Using the DevContainer in VS Code
+## 기술 스택
 
-If you are using [Visual Studio Code](https://code.visualstudio.com/) you can use the [Dev Container](https://code.visualstudio.com/docs/devcontainers/containers) that comes with this Repository. Normally VS Code detects that a development coontainer configuration is available and asks you if you want to use the container. If this doesn't happen you can manually start the container by **F1->DevContainer: Reopen in Container**. This restarts your VS Code in the container and automatically hosts your academic page locally on http://localhost:4000. All changes will be updated live to that page after a few seconds.
+- Jekyll 기반 정적 사이트 생성기
+- GitHub Pages 호스팅
+- Minimal Mistakes Jekyll Theme 기반 (© 2016 Michael Rose, MIT License)
+- Markdown 기반 콘텐츠 관리
 
-# Maintenance
+---
 
-Bug reports and feature requests to the template should be [submitted via GitHub](https://github.com/academicpages/academicpages.github.io/issues/new/choose). For questions concerning how to style the template, please feel free to start a [new discussion on GitHub](https://github.com/academicpages/academicpages.github.io/discussions).
-
-This repository was forked (then detached) by [Stuart Geiger](https://github.com/staeiou) from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/), which is © 2016 Michael Rose and released under the MIT License (see LICENSE.md). It is currently being maintained by [Robert Zupko](https://github.com/rjzupkoii) and additional maintainers would be welcomed.
-
-## Bugfixes and enhancements
-
-If you have bugfixes and enhancements that you would like to submit as a pull request, you will need to [fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) this repository as opposed to using it as a template. This will also allow you to [synchronize your copy](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) of template to your fork as well.
-
-Unfortunately, one logistical issue with a template theme like Academic Pages that makes it a little tricky to get bug fixes and updates to the core theme. If you use this template and customize it, you will probably get merge conflicts if you attempt to synchronize. If you want to save your various .yml configuration files and markdown files, you can delete the repository and fork it again. Or you can manually patch.
+이 저장소는 [Stuart Geiger](https://github.com/staeiou)가 [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/)에서 포크한 후 분리된 것으로, 현재 [Robert Zupko](https://github.com/rjzupkoii)가 유지보수하고 있습니다.
 
 ---
 <div align="center">
@@ -91,6 +83,4 @@ Unfortunately, one logistical issue with a template theme like Academic Pages th
 [![GitHub release](https://img.shields.io/github/v/release/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io/releases/latest)
 [![GitHub license](https://img.shields.io/github/license/academicpages/academicpages.github.io?color=blue)](https://github.com/academicpages/academicpages.github.io/blob/master/LICENSE)
 
-[![GitHub stars](https://img.shields.io/github/stars/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io)
-[![GitHub forks](https://img.shields.io/github/forks/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io/fork)
 </div>
