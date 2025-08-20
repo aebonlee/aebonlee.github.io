@@ -59,6 +59,15 @@
   display: block;
   list-style-type: none;
   white-space: nowrap;
+  padding: 0 1em;  /* 좌우 균등한 간격 추가 */
+  
+  &:first-child {
+    padding-left: 0;  /* 첫 번째 아이템 왼쪽 패딩 제거 */
+  }
+  
+  &:last-child {
+    padding-right: 0;  /* 마지막 아이템 오른쪽 패딩 제거 */
+  }
 
   &--lg {
     padding-right: 2em;
