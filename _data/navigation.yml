@@ -20,6 +20,9 @@ main:
   - title: "Research"
     url: /talks/    
 
+  - title: "Qualification"
+    url: /qualification/
+
   - title: "Portfolio"
     url: /portfolio/
         
