@@ -55,9 +55,7 @@ html {
 
 body {
   position: relative;
-  background: linear-gradient(45deg, #ff00ff, #00ffff, #ff0080, #8000ff, #ff6600);
-  background-size: 400% 400%;
-  animation: gradientWave 8s ease infinite;
+  background: #1a1a1a; /* Dark background for VANTA waves */
   min-height: 100vh;
   margin: 0;
   padding: 0;
@@ -66,74 +64,15 @@ body {
   flex-direction: column;
 }
 
-@keyframes gradientWave {
-  0% { background-position: 0% 50%; }
-  25% { background-position: 100% 50%; }
-  50% { background-position: 100% 100%; }
-  75% { background-position: 0% 100%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* CSS Wave overlay effect */
-body::before {
-  content: '';
+/* VANTA background container */
+#vanta-background {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: 
-    radial-gradient(circle at 20% 50%, rgba(255, 0, 255, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 80% 30%, rgba(0, 255, 255, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 40% 70%, rgba(255, 0, 128, 0.2) 0%, transparent 50%),
-    radial-gradient(circle at 60% 20%, rgba(128, 0, 255, 0.2) 0%, transparent 50%);
-  animation: waveMove 12s linear infinite;
   z-index: -1;
   pointer-events: none;
-}
-
-@keyframes waveMove {
-  0% { transform: translateX(0) translateY(0) rotate(0deg); }
-  25% { transform: translateX(20px) translateY(-10px) rotate(90deg); }
-  50% { transform: translateX(0) translateY(-20px) rotate(180deg); }
-  75% { transform: translateX(-20px) translateY(-10px) rotate(270deg); }
-  100% { transform: translateX(0) translateY(0) rotate(360deg); }
-}
-
-/* Additional floating wave elements */
-body::after {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: 
-    linear-gradient(45deg, rgba(255, 102, 0, 0.1) 0%, transparent 25%),
-    linear-gradient(-45deg, rgba(255, 0, 102, 0.1) 50%, transparent 75%),
-    linear-gradient(135deg, rgba(102, 0, 255, 0.1) 25%, transparent 50%);
-  animation: floatingWave 15s ease-in-out infinite;
-  z-index: -1;
-  pointer-events: none;
-}
-
-@keyframes floatingWave {
-  0% { 
-    transform: scale(1) rotate(0deg);
-    opacity: 0.3;
-  }
-  33% { 
-    transform: scale(1.1) rotate(120deg);
-    opacity: 0.6;
-  }
-  66% { 
-    transform: scale(0.9) rotate(240deg);
-    opacity: 0.4;
-  }
-  100% { 
-    transform: scale(1) rotate(360deg);
-    opacity: 0.3;
-  }
 }
 
 /* SVG Wave background styling */
