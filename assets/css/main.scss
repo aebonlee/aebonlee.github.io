@@ -53,6 +53,8 @@ body {
   position: relative;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   min-height: 100vh;
+  padding-bottom: 150px; /* Footer height */
+  margin: 0;
 }
 
 body::before {
@@ -81,10 +83,12 @@ body::before {
     0 20px 40px rgba(0, 0, 0, 0.1),
     0 0 60px rgba(255, 255, 255, 0.2) inset;
   margin: 2em auto;
+  margin-bottom: 30px;
   max-width: $container-max-width;
   display: flex;
   gap: 30px;
   padding: 30px;
+  min-height: calc(100vh - 150px - 4em - 60px); /* Viewport - footer - margins - padding */
 }
 
 /* Enhanced sidebar with glassmorphism */
@@ -219,8 +223,35 @@ body::before {
 .page__footer {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
-  margin-top: 3em;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
   border-top: 1px solid rgba(255, 255, 255, 0.3);
+  height: 150px !important;
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  bottom: 0;
+  
+  footer {
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  
+  .page__footer-copyright {
+    margin-bottom: 10px;
+  }
+  
+  .page__footer-follow {
+    margin: 0;
+  }
 }
 
 /* Links with gradient effect */
