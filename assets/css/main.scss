@@ -55,7 +55,7 @@ html {
 
 body {
   position: relative;
-  background: #f5f5f5; /* Fallback color */
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); /* Dark gradient background for SVG waves */
   min-height: 100vh;
   margin: 0;
   padding: 0;
@@ -64,8 +64,8 @@ body {
   flex-direction: column;
 }
 
-/* Canvas background styling */
-#wave-canvas {
+/* SVG Wave background styling */
+#wave-background {
   position: fixed !important;
   top: 0;
   left: 0;
