@@ -1,7 +1,40 @@
 ---
-title: "Portfolio item number 1"
-excerpt: "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+title: "세종대학교 미래교육원"
+excerpt: "학점은행제 및 다양한 교육 프로그램 운영"
 collection: portfolio
+header:
+  teaser: /images/sejong-cec-thumb.jpg
+sidebar:
+  - title: "역할"
+    text: "교육 프로그램 개발 및 컨설팅"
+  - title: "기간"
+    text: "2023 - 현재"
+  - title: "주요 활동"
+    text: "학점은행제 과정 개발, 디지털 교육 혁신"
 ---
 
-This is an item in your portfolio. It can be have images or nice text. If you name the file .md, it will be parsed as markdown. If you name the file .html, it will be parsed as HTML. 
+## 프로젝트 개요
+
+세종대학교 미래교육원은 학점은행제를 통해 다양한 분야의 학위 취득 기회를 제공하는 평생교육 기관입니다. AI, 디지털아트, 호텔경영 등 미래 사회가 요구하는 전문 인재 양성을 목표로 합니다.
+
+### 주요 교육 프로그램
+
+* **학점은행제**: 무용, 음악, 호텔경영, 연극영화, 체육, 디지털아트 등 다양한 전공 학사학위 과정
+* **AI 전공**: 인공지능 시대를 선도할 전문 인력 양성
+* **실용음악**: 피아노, 관현악, 성악, 실용음악 등 음악 전문 교육
+* **디지털아트**: 디지털 시대의 창의적 인재 육성
+
+### 담당 업무
+
+* 디지털 전환(DX) 교육 프로그램 설계 및 개발
+* AI 기초 및 활용 교육 커리큘럼 구성
+* 온라인 교육 플랫폼 구축 자문
+* 학점은행제 과정 품질 관리 및 개선
+
+### 성과
+
+* 비학위과정 온라인 교육 시스템 구축 지원
+* AI 융합 교육과정 개발 참여
+* 지역 협력 프로그램 활성화 기여
+
+[세종대학교 미래교육원 바로가기](https://cec.sejong.ac.kr) 
