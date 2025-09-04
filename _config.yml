@@ -23,13 +23,15 @@ repository               : "aebonlee/aebonlee.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
+
+
   name             : "이애본"
   pronouns         : # example: "she/her"  
   bio              : "한국직업능력개발센터장"
   location         : "Seoul, Korea"
   employer         : "경기대학교 일반대학원"
-  uri              : # URL
-  email            : # 실제 이메일 주소로 업데이트 필요 
+  uri              : "https://aebonlee.github.io/"
+  email            : "aebon@kyonggi.ac.kr" 
 
   # Academic websites
   academia         : # URL
