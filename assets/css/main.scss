@@ -49,13 +49,18 @@ $content-padding: 40px;
 $content-max-width: calc(#{$container-max-width} - #{$sidebar-width} - 80px);
 
 /* Enhanced background with wave animation */
+html {
+  height: 100%;
+}
+
 body {
   position: relative;
   background: #f5f5f5; /* Fallback color */
-  min-height: 100vh;
-  padding-bottom: 150px; /* Footer height */
+  min-height: 100%;
   margin: 0;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Canvas background styling */
@@ -80,12 +85,11 @@ body {
     0 20px 40px rgba(0, 0, 0, 0.1),
     0 0 60px rgba(255, 255, 255, 0.2) inset;
   margin: 2em auto;
-  margin-bottom: 30px;
   max-width: $container-max-width;
   display: flex;
   gap: 30px;
   padding: 30px;
-  min-height: calc(100vh - 150px - 4em - 60px); /* Viewport - footer - margins - padding */
+  flex: 1 0 auto; /* Flex grow to fill available space */
 }
 
 /* Enhanced sidebar with glassmorphism */
@@ -110,8 +114,9 @@ body {
   border-radius: 10px;
   padding: $content-padding !important;
   margin: 0;
-  flex: 1;
+  flex: 1 1 auto; /* Allow page to grow and shrink */
   max-width: $content-max-width;
+  min-height: calc(100vh - 250px); /* Ensure minimum height */
 }
 
 /* Page title spacing enhancement */
@@ -216,21 +221,19 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* Footer styling */
+/* Footer styling - Sticky footer */
 .page__footer {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   margin: 0 !important;
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
+  margin-top: auto !important; /* Push footer to bottom */
   border-top: 1px solid rgba(255, 255, 255, 0.3);
-  height: 150px !important;
-  min-height: 150px;
+  height: 150px;
+  flex-shrink: 0; /* Prevent footer from shrinking */
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  bottom: 0;
+  width: 100%;
   
   footer {
     margin: 0 auto;
