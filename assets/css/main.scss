@@ -51,11 +51,12 @@ $content-max-width: calc(#{$container-max-width} - #{$sidebar-width} - 80px);
 /* Enhanced background with wave animation */
 html {
   height: 100%;
+  background: #0a0a0a; /* Very dark background to show colorful waves */
 }
 
 body {
   position: relative;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); /* Dark gradient background for SVG waves */
+  background: transparent; /* Transparent to show SVG waves */
   min-height: 100vh;
   margin: 0;
   padding: 0;
