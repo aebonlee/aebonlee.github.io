@@ -43,8 +43,8 @@
 ;
 
 /* Layout configuration variables */
-$sidebar-width: 280px;
-$container-max-width: 1280px;
+$sidebar-width: 300px;
+$container-max-width: 1400px;
 $content-padding: 40px;
 $content-max-width: calc(#{$container-max-width} - #{$sidebar-width} - 80px);
 
@@ -310,6 +310,8 @@ a:hover {
     padding: 25px !important;
     margin: 0;
     width: $sidebar-width !important;
+    min-width: $sidebar-width !important;
+    max-width: $sidebar-width !important;
   }
   
   .page {
