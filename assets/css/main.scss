@@ -51,11 +51,12 @@ $content-max-width: calc(#{$container-max-width} - #{$sidebar-width} - 80px);
 /* Enhanced background with wave animation */
 html {
   height: 100%;
+  background: transparent;
 }
 
 body {
   position: relative;
-  background: #1a1a1a; /* Dark background for VANTA waves */
+  background: transparent; /* Transparent to show wave background */
   min-height: 100vh;
   margin: 0;
   padding: 0;
