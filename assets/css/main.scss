@@ -305,6 +305,9 @@ a:hover {
     display: flex;
     align-items: flex-start;
     justify-content: center;
+    width: 100%;
+    max-width: $container-max-width;
+    margin: 0 auto;
   }
   
   .sidebar {
@@ -317,6 +320,7 @@ a:hover {
     width: $sidebar-width !important;
     min-width: $sidebar-width !important;
     max-width: $sidebar-width !important;
+    flex-shrink: 0;
   }
   
   .page {
@@ -324,6 +328,7 @@ a:hover {
     padding: $content-padding !important;
     width: 100%;
     max-width: $content-max-width;
+    flex: 1;
   }
   
   .author__content {
