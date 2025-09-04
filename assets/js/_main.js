@@ -2,6 +2,8 @@
    Various functions that we want to use within the template
    ========================================================================== */
 
+/* Theme toggle functionality removed - dark/light mode disabled */
+/*
 // Determine the expected state of the theme toggle, which can be "dark", "light", or
 // "system". Default is "system".
 let determineThemeSetting = () => {
@@ -46,6 +48,7 @@ var toggleTheme = () => {
   localStorage.setItem("theme", new_theme);
   setTheme(new_theme);
 };
+*/
 
 /* ==========================================================================
    Plotly integration script so that Markdown codeblocks will be rendered
@@ -68,8 +71,8 @@ if (plotlyElements.length > 0) {
         let chartElement = document.createElement("div");
         elem.parentElement.after(chartElement);
 
-        // Set the theme for the plot and render it
-        const theme = (determineComputedTheme() === "dark") ? plotlyDarkLayout : plotlyLightLayout;
+        // Use light theme for all plots (theme toggle disabled)
+        const theme = plotlyLightLayout;
         if (jsonData.layout) {
           jsonData.layout.template = (jsonData.layout.template) ? { ...theme, ...jsonData.layout.template } : theme;
         } else {
@@ -90,6 +93,8 @@ $(document).ready(function () {
   const scssLarge = 925;          // pixels, from /_sass/_themes.scss
   const scssMastheadHeight = 70;  // pixels, from the current theme (e.g., /_sass/theme/_default.scss)
 
+  /* Theme toggle functionality disabled */
+  /*
   // If the user hasn't chosen a theme, follow the OS preference
   setTheme();
   window.matchMedia('(prefers-color-scheme: dark)')
@@ -101,6 +106,7 @@ $(document).ready(function () {
 
   // Enable the theme toggle
   $('#theme-toggle').on('click', toggleTheme);
+  */
 
   // Enable the sticky footer
   var bumpIt = function () {
