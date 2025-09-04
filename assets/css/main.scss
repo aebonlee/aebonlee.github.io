@@ -374,6 +374,10 @@ a:hover {
 }
 
 /* Improve spacing between sidebar elements */
+.author__avatar {
+  margin-bottom: 15px !important; /* Adjust space between photo and name */
+}
+
 .author__name {
   margin-bottom: 8px !important;
 }
