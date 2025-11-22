@@ -179,10 +179,10 @@ redirect_from:
       <span style="font-size: 0.7em; font-weight: normal; margin-left: 1em; color: var(--global-text-color-light, #666);">
         ({{ site.posts | where_exp: "item", "item.date contains year" | size }} publications)
       </span>
-      <p></p>
     </h2>
     {% capture written_year %}{{ year }}{% endcapture %}
   {% endif %}
+  <p></p>
   {% include archive-single.html %}
 {% endfor %}
 
