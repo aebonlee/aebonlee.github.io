@@ -252,7 +252,7 @@
   &#year-archive {
     .archive__subtitle.year-header {
       margin-top: 5em;  // 연도 헤더 위 간격 대폭 증가
-      margin-bottom: 1em;  // 연도 헤더 아래 간격은 줄이고
+      margin-bottom: 2em;  // 연도 헤더 아래 간격
       padding-bottom: 1em;
       font-size: 2rem;  // 더 큰 폰트
       font-weight: 700;
@@ -264,19 +264,37 @@
       }
     }
     
-    // 연도별 포스트 wrapper
+    // 연도별 그룹
+    .year-group {
+      margin-bottom: 2em;
+    }
+    
+    // 개별 포스트 wrapper
     .year-archive-post {
-      padding-top: 2.5em;  // 연도 헤더와 첫 포스트 사이 충분한 간격
+      // 첫 번째 포스트는 연도 헤더와 간격
+      &:first-child {
+        padding-top: 1em;
+      }
       
+      // 포스트간 간격 - 훨씬 넓게
       &:not(:last-child) {
+        padding-bottom: 4em;  // 포스트 하단 패딩 4em으로 대폭 증가
+        margin-bottom: 4em;   // 포스트간 마진 4em으로 대폭 증가
+        border-bottom: 1px dotted rgba(0, 0, 0, 0.1);  // 더 연한 구분선
+      }
+      
+      // 마지막 포스트
+      &:last-child {
         padding-bottom: 2em;
-        margin-bottom: 1.5em;
-        border-bottom: 1px solid var(--border-color, #dee2e6);
       }
       
       .list__item {
-        margin-bottom: 0;  // list__item 자체 마진 제거
+        margin-bottom: 0;
         padding-bottom: 0;
+        
+        .archive__item {
+          padding: 1.5em 0;  // 포스트 내부 패딩
+        }
         
         .archive__item-title {
           font-size: 1.25rem;
@@ -292,6 +310,7 @@
         
         .archive__item-excerpt {
           margin-top: 0.75em;
+          line-height: 1.6;
         }
       }
     }

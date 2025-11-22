@@ -12,10 +12,17 @@ redirect_from:
 {% for post in site.posts %}
   {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
   {% if year != written_year %}
+    {% if written_year != 'None' %}
+      </div>  <!-- Close previous year-group -->
+    {% endif %}
     <h2 id="{{ year | slugify }}" class="archive__subtitle year-header">{{ year }}</h2>
+    <div class="year-group">  <!-- Start new year-group -->
     {% capture written_year %}{{ year }}{% endcapture %}
   {% endif %}
   <div class="year-archive-post">
     {% include archive-single.html %}
   </div>
 {% endfor %}
+{% if written_year != 'None' %}
+  </div>  <!-- Close last year-group -->
+{% endif %}
