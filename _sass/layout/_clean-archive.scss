@@ -101,7 +101,7 @@
   // Individual archive item (except year-archive)
   &:not(#year-archive) .archive__item {
     padding: 25px; // Increased padding
-    margin-bottom: 25px; // Increased margin
+    margin-top: 30px; // Changed from margin-bottom to margin-top with increased spacing
     background: var(--link-bg, #f8f9fa);
     border: 1px solid var(--border-color, #dee2e6);
     border-radius: 8px;
