@@ -1,22 +1,17 @@
 var addressPoints = [
   [
-    "Talk 2 on Relevant Topic in Your Field<br />London School of Testing; London, UK",
-    51.4893335,
-    -0.14405508452768728
+    "\uc9c1\uc5c5\uad50\uc721\ud6c8\ub828\uc758 \ub514\uc9c0\ud138 \uc804\ud658\uacfc \ubbf8\ub798 \uc804\ub7b5<br />\ud55c\uad6d\uc9c1\uc5c5\ub2a5\ub825\uac1c\ubc1c\uc6d0; \uc138\uc885\uc2dc, \ub300\ud55c\ubbfc\uad6d",
+    36.4799999,
+    127.289
   ],
   [
-    "Tutorial 1 on Relevant Topic in Your Field<br />UC-Berkeley Institute for Testing Science; Berkeley, CA, USA",
-    37.8708393,
-    -122.272863
+    "\uc0dd\uc131\ud615 AI \uc2dc\ub300\uc758 \uad50\uc721 \ud601\uc2e0 \uc804\ub7b5<br />2024 AI Education Conference; \uc11c\uc6b8, \ub300\ud55c\ubbfc\uad6d",
+    37.5666791,
+    126.9782914
   ],
   [
-    "Conference Proceeding talk 3 on Relevant Topic in Your Field<br />Testing Institute of America 2014 Annual Conference; Los Angeles, CA, USA",
-    34.0536909,
-    -118.242766
-  ],
-  [
-    "Talk 1 on Relevant Topic in Your Field<br />UC San Francisco, Department of Testing; San Francisco, CA, USA",
-    37.7792588,
-    -122.4193286
+    "\ubb34\uc5ed\uae30\uc220\uc7a5\ubcbd(TBT)\uacfc \ud45c\uc900\ud654 \uc804\ub7b5 \uc5f0\uad6c<br />\uc5f0\uc138\ub300\ud559\uad50 TBT \uace0\uc704\uacfc\uc815; \uc11c\uc6b8, \ub300\ud55c\ubbfc\uad6d",
+    37.5666791,
+    126.9782914
   ]
 ];
