@@ -126,21 +126,4 @@
   }
 }
 
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #1a1a1a;
-    color: #e0e0e0;
-  }
-
-  .page__content {
-    a {
-      color: #66b3ff;
-    }
-  }
-
-  .archive__item {
-    background-color: #2a2a2a;
-    border-color: #3a3a3a;
-  }
-}
+/* Remove duplicate dark mode styles - handled by theme files */

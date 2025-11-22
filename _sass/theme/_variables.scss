@@ -1,0 +1,51 @@
+/* ==========================================================================
+   UNIFIED COLOR VARIABLES
+   ========================================================================== */
+
+/* Base Colors */
+$primary-color              : #667eea;
+$secondary-color            : #764ba2;
+$accent-color               : #52adc8;
+
+/* Gray Scale */
+$gray-100                   : #f8f9fa;
+$gray-200                   : #e9ecef;
+$gray-300                   : #dee2e6;
+$gray-400                   : #ced4da;
+$gray-500                   : #adb5bd;
+$gray-600                   : #6c757d;
+$gray-700                   : #495057;
+$gray-800                   : #343a40;
+$gray-900                   : #212529;
+
+/* Legacy Gray (for compatibility) */
+$gray                       : #7a8288;
+$dark-gray                  : mix(#000, $gray, 40%);
+$darker-gray                : mix(#000, $gray, 60%);
+$light-gray                 : mix(#fff, $gray, 50%);
+$lighter-gray               : mix(#fff, $gray, 90%);
+
+/* Status Colors */
+$danger-color               : #dc3545;
+$info-color                 : #17a2b8;
+$notice-color               : #6c757d;
+$success-color              : #28a745;
+$warning-color              : #ffc107;
+
+/* Light Theme Colors */
+$light-bg                   : #ffffff;
+$light-bg-secondary         : #f8f9fa;
+$light-text                 : #212529;
+$light-text-muted           : #6c757d;
+$light-border               : #dee2e6;
+$light-link                 : #52adc8;
+$light-link-hover           : #2c7a94;
+
+/* Dark Theme Colors */
+$dark-bg                    : #1a1a1a;
+$dark-bg-secondary          : #2d2d2d;
+$dark-text                  : #e9ecef;
+$dark-text-muted            : #adb5bd;
+$dark-border                : #495057;
+$dark-link                  : #66b3ff;
+$dark-link-hover            : #99ccff;

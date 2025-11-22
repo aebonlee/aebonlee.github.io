@@ -2,26 +2,16 @@
    DARK THEME
    ========================================================================== */
 
-/* Color codes used for the theme */
-$gray                       : #7a8288;
-$dark-gray                  : mix(#000, $gray, 40%);
-$darker-gray                : mix(#000, $gray, 60%);
-$light-gray                 : mix(#fff, $gray, 50%);
+@import "variables";
 
-$background                 : #474747;
-$background-light           : mix(#fff, $background, 80%);
-$background-lighter         : mix(#fff, $background, 90%);
-$text                       : #ffffff;
-$link                       : #0ea1c5;
-$link-dark                  : mix(#000, $link, 25%);
-$link-light                 : mix(#fff, $link, 25%);
-
-/* Color codes used for the site */
-$danger-color               : #ee5f5b;
-$info-color                 : #2f7f93;
-$notice-color               : #7a8288;
-$success-color              : #62c462;
-$warning-color              : #f89406;
+/* Override colors for dark theme if needed */
+$dark-background            : $dark-bg;
+$dark-background-secondary  : $dark-bg-secondary;
+$dark-text-primary          : $dark-text;
+$dark-text-secondary        : $dark-text-muted;
+$dark-border-primary        : $dark-border;
+$dark-link-primary          : $dark-link;
+$dark-link-hover-primary    : $dark-link-hover;
 
 /* Other basic settings for the template */
 $border-radius              : 4px;
@@ -34,21 +24,49 @@ $sidebar-link-max-width     : 250px;
 $sidebar-screen-min-width   : 1024px;
 
 /* Dark theme for the site */
-html[data-theme="dark"] {
-    --global-base-color                 : #{$background};
-    --global-bg-color                   : #{$background};
-    --global-footer-bg-color            : #{$background};
-    --global-border-color               : #{$light-gray};
-    --global-dark-border-color          : #{$background-light};
-    --global-code-background-color      : #fafafa;
-    --global-code-text-color            : #{$darker-gray};
-    --global-fig-caption-color          : #{$light-gray};
-    --global-link-color                 : #{$link};
-    --global-link-color-hover           : #{$link-dark};
-    --global-link-color-visited         : #{$link-light};
-    --global-masthead-link-color        : #{$text};
-    --global-masthead-link-color-hover  : #{$background-light};
-    --global-text-color                 : #{$text};
-    --global-text-color-light           : #f3f3f3;
-    --global-thead-color                : #{$background-lighter};
+body[data-theme="dark"],
+html[data-theme="dark"],
+@media (prefers-color-scheme: dark) {
+    body:not([data-theme="light"]) {
+        /* Background colors */
+        --global-bg-color                   : #{$dark-background};
+        --global-bg-secondary               : #{$dark-background-secondary};
+        --global-footer-bg-color            : #{$dark-background-secondary};
+        
+        /* Text colors */
+        --global-text-color                 : #{$dark-text-primary};
+        --global-text-color-light           : #{$dark-text-secondary};
+        --global-base-color                 : #{$gray-400};
+        
+        /* Border colors */
+        --global-border-color               : #{$dark-border-primary};
+        --global-dark-border-color          : #{$gray-700};
+        
+        /* Link colors */
+        --global-link-color                 : #{$dark-link-primary};
+        --global-link-color-hover           : #{$dark-link-hover-primary};
+        --global-link-color-visited         : #{darken($dark-link-primary, 10%)};
+        
+        /* Code colors */
+        --global-code-background-color      : #{$gray-900};
+        --global-code-text-color            : #{$gray-300};
+        
+        /* Other colors */
+        --global-fig-caption-color          : #{$gray-400};
+        --global-masthead-link-color        : #{$gray-300};
+        --global-masthead-link-color-hover  : #{$gray-100};
+        --global-thead-color                : #{$gray-800};
+        
+        /* Status colors (adjusted for dark mode) */
+        --danger-color                      : #{lighten($danger-color, 10%)};
+        --info-color                        : #{lighten($info-color, 10%)};
+        --notice-color                      : #{lighten($notice-color, 10%)};
+        --success-color                     : #{lighten($success-color, 10%)};
+        --warning-color                     : #{lighten($warning-color, 10%)};
+        
+        /* Primary colors (adjusted for dark mode) */
+        --primary-color                     : #{lighten($primary-color, 10%)};
+        --secondary-color                   : #{lighten($secondary-color, 10%)};
+        --accent-color                      : #{lighten($accent-color, 10%)};
+    }
 }
