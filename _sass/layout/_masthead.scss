@@ -27,7 +27,7 @@
   &__inner-wrap {
     @include container;
     @include clearfix;
-    padding: 0.5em 1em;
+    padding: 1em 1.5em; // Increased padding for better spacing
     font-family: $sans-serif-narrow;
 
     @include breakpoint($x-large) {
@@ -59,7 +59,7 @@
   display: block;
   list-style-type: none;
   white-space: nowrap;
-  padding: 0 1em;  /* 좌우 균등한 간격 추가 */
+  padding: 0 1.25em;  /* Increased spacing between menu items */
   
   &:first-child {
     padding-left: 0;  /* 첫 번째 아이템 왼쪽 패딩 제거 */

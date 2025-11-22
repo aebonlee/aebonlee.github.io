@@ -18,29 +18,30 @@
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 40px 20px; // Increased padding
     display: grid;
     grid-template-columns: 280px 1fr;
-    gap: 30px;
+    gap: 40px; // Increased gap
     align-items: start;
     
     @media (max-width: 1023px) {
       grid-template-columns: 1fr;
-      padding: 15px;
-      gap: 20px;
+      padding: 30px 15px;
+      gap: 30px;
     }
   }
   
   // Sidebar - same as single
   .sidebar {
-    background: white;
-    border: 1px solid #dee2e6;
+    background: var(--sidebar-bg, white);
+    border: 1px solid var(--border-color, #dee2e6);
     border-radius: 10px;
-    padding: 20px;
+    padding: 25px;
     position: sticky;
-    top: 80px;
-    max-height: calc(100vh - 100px);
+    top: 90px;
+    max-height: calc(100vh - 120px);
     overflow-y: auto;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
     
     @media (max-width: 1023px) {
       display: none;
@@ -49,26 +50,27 @@
   
   // Archive content wrapper
   .archive {
-    background: white;
-    border: 1px solid #dee2e6;
+    background: var(--content-bg, white);
+    border: 1px solid var(--border-color, #dee2e6);
     border-radius: 10px;
-    padding: 30px;
+    padding: 40px; // Increased padding
     min-height: 500px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
     
     @media (max-width: 767px) {
-      padding: 20px;
+      padding: 25px;
     }
   }
   
   // Archive title
   .page__title,
   .archive__title {
-    margin: 0 0 30px 0;
-    padding-bottom: 15px;
+    margin: 0 0 35px 0; // Increased margin
+    padding-bottom: 20px;
     font-size: 2rem;
     font-weight: 700;
-    color: #212529;
-    border-bottom: 2px solid #dee2e6;
+    color: var(--heading-color, #212529);
+    border-bottom: 2px solid var(--border-color, #dee2e6);
     
     @media (max-width: 767px) {
       font-size: 1.5rem;
@@ -92,10 +94,10 @@
   
   // Individual archive item
   .archive__item {
-    padding: 20px;
-    margin-bottom: 20px;
-    background: #f8f9fa;
-    border: 1px solid #dee2e6;
+    padding: 25px; // Increased padding
+    margin-bottom: 25px; // Increased margin
+    background: var(--link-bg, #f8f9fa);
+    border: 1px solid var(--border-color, #dee2e6);
     border-radius: 8px;
     transition: all 0.2s ease;
     
