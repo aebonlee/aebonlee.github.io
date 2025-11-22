@@ -18,29 +18,30 @@
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 40px 20px; // Increased padding
     display: grid;
     grid-template-columns: 280px 1fr;
-    gap: 30px;
+    gap: 40px; // Increased gap
     align-items: start;
     
     @media (max-width: 1023px) {
       grid-template-columns: 1fr;
-      padding: 15px;
-      gap: 20px;
+      padding: 30px 15px;
+      gap: 30px;
     }
   }
   
   // Sidebar - same as single
   .sidebar {
-    background: white;
-    border: 1px solid #dee2e6;
+    background: var(--sidebar-bg, white);
+    border: 1px solid var(--border-color, #dee2e6);
     border-radius: 10px;
-    padding: 20px;
+    padding: 25px;
     position: sticky;
-    top: 80px;
-    max-height: calc(100vh - 100px);
+    top: 90px;
+    max-height: calc(100vh - 120px);
     overflow-y: auto;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
     
     @media (max-width: 1023px) {
       display: none;
@@ -49,26 +50,33 @@
   
   // Archive content wrapper
   .archive {
-    background: white;
-    border: 1px solid #dee2e6;
+    background: var(--content-bg, white);
+    border: 1px solid var(--border-color, #dee2e6);
     border-radius: 10px;
-    padding: 30px;
+    padding: 40px; // Increased padding
     min-height: 500px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    overflow: hidden; // 박스 밖으로 나가는 콘텐츠 방지
     
     @media (max-width: 767px) {
-      padding: 20px;
+      padding: 25px;
+    }
+    
+    // 모든 자식 요소는 박스 내부에 유지
+    > * {
+      max-width: 100%;
     }
   }
   
   // Archive title
   .page__title,
   .archive__title {
-    margin: 0 0 30px 0;
-    padding-bottom: 15px;
+    margin: 0 0 35px 0; // Increased margin
+    padding-bottom: 20px;
     font-size: 2rem;
     font-weight: 700;
-    color: #212529;
-    border-bottom: 2px solid #dee2e6;
+    color: var(--heading-color, #212529);
+    border-bottom: 2px solid var(--border-color, #dee2e6);
     
     @media (max-width: 767px) {
       font-size: 1.5rem;
@@ -90,12 +98,12 @@
     list-style: none;
   }
   
-  // Individual archive item
-  .archive__item {
-    padding: 20px;
-    margin-bottom: 20px;
-    background: #f8f9fa;
-    border: 1px solid #dee2e6;
+  // Individual archive item (except year-archive)
+  &:not(#year-archive) .archive__item {
+    padding: 25px; // Increased padding
+    margin-bottom: 25px; // Increased margin
+    background: var(--link-bg, #f8f9fa);
+    border: 1px solid var(--border-color, #dee2e6);
     border-radius: 8px;
     transition: all 0.2s ease;
     
@@ -242,6 +250,102 @@
       
       .archive__item-excerpt {
         flex: 1;
+      }
+    }
+  }
+  
+  // Year Archive specific styles
+  &#year-archive {
+    // 박스 내부에 콘텐츠가 제대로 위치하도록
+    position: relative;
+    
+    .page__title {
+      // 페이지 타이틀 조정
+      margin: 0 0 2rem 0;
+      padding: 0;
+    }
+    
+    .archive__subtitle.year-header {
+      margin: 3rem 0 1.5rem 0;  // 연도간 간격 증가
+      padding-bottom: 0.75rem;
+      font-size: 1.5rem;  // 약간 크게
+      font-weight: 700;
+      color: var(--heading-color, #212529);
+      border-bottom: 2px solid var(--primary-color, #667eea);
+      width: 100%;
+      box-sizing: border-box;
+      
+      &:first-of-type {
+        margin-top: 0;
+      }
+    }
+    
+    // 연도별 그룹
+    .year-group {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    
+    // 개별 포스트 wrapper  
+    .year-archive-post {
+      padding: 1.5rem 0;  // 적절한 패딩
+      margin: 0;
+      width: 100%;
+      box-sizing: border-box;
+      
+      &:not(:last-child) {
+        margin-bottom: 2.5rem;  // 포스트간 간격 증가
+        padding-bottom: 2.5rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      }
+      
+      &:last-child {
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
+      
+      .list__item {
+        margin: 0;
+        padding: 0;
+        border: none;
+        width: 100%;
+        
+        .archive__item {
+          padding: 0;
+          margin: 0;
+          background: transparent;
+          border: none;
+          width: 100%;
+        }
+        
+        .archive__item-title {
+          font-size: 1.2rem;
+          margin: 0 0 0.5rem 0;
+          line-height: 1.4;
+          
+          a {
+            color: var(--link-color, #667eea);
+            text-decoration: none;
+            
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+        
+        .page__meta,
+        .page__date {
+          margin: 0 0 0.5rem 0;
+          font-size: 0.9rem;
+          color: var(--text-color-light, #6c757d);
+        }
+        
+        .archive__item-excerpt {
+          margin: 0.75rem 0 0 0;
+          line-height: 1.6;
+          color: var(--text-color, #212529);
+        }
       }
     }
   }

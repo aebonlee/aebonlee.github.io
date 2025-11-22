@@ -17,8 +17,7 @@
 
   /* Main content padding adjustment */
   #main {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    padding: 1.5rem 1rem; // Better mobile padding
   }
 
   /* Author profile mobile optimization */
@@ -56,22 +55,28 @@
   
   /* Card layouts for mobile */
   .archive__item {
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border: 1px solid #e0e0e0;
-    border-radius: 4px;
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid var(--border-color, #e0e0e0);
+    border-radius: 6px;
+    background: var(--content-bg, white);
   }
 }
 
 /* Tablet optimization */
 @media (min-width: 769px) and (max-width: 1024px) {
   #main {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding: 2rem 1.5rem; // Consistent padding
   }
 
   .page {
-    padding: 0 1rem;
+    padding: 1.5rem;
+  }
+  
+  /* Sidebar on tablet */
+  .sidebar {
+    position: static;
+    margin-bottom: 2rem;
   }
 }
 

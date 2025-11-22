@@ -28,20 +28,37 @@
 }
 
 .archive__subtitle {
-  margin: 1.414em 0 0;
-  padding-bottom: 0.5em;
-  font-size: $type-size-5;
+  margin: 3em 0 1.5em; // Increased top margin for year headers
+  padding-bottom: 0.75em;
+  font-size: $type-size-4; // Slightly larger font
+  font-weight: 600;
   color: var(--global-text-color-light);
-  border-bottom: 1px solid var(--global-border-color);
+  border-bottom: 2px solid var(--global-border-color); // Thicker border
 
-  + .list__item .archive__item-title {
-    margin-top: 0.5em;
+  // First year subtitle should have less top margin
+  &:first-child {
+    margin-top: 1.5em;
+  }
+
+  // First post after year header needs extra spacing
+  + .list__item {
+    margin-top: 2em; // Much more space after year header
+    
+    .archive__item-title {
+      margin-top: 0; // Reset the title margin
+    }
+  }
+  
+  // Subsequent items
+  + .list__item + .list__item {
+    margin-top: 0; // Normal spacing for other items
   }
 }
 
 .archive__item-title {
-  margin-bottom: 0.25em;
+  margin-bottom: 0.5em; // Increased bottom margin
   font-family: $sans-serif-narrow;
+  line-height: 1.4; // Better line height
 
   a + a {
     opacity: 0.5;
@@ -89,21 +106,39 @@
    List view
    ========================================================================== */
 
+// Default list item styles
 .list__item {
-  @include breakpoint($medium) {
-    padding-right: $right-sidebar-width-narrow;
+  // year-archive 페이지가 아닐 때만 적용
+  .archive:not(#year-archive) & {
+    margin-bottom: 2em; // Add spacing between posts
+    padding-bottom: 1.5em; // Add padding at bottom
+    
+    &:not(:last-child) {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
   }
-
-  @include breakpoint($large) {
-    padding-right: $right-sidebar-width;
+  
+  // year-archive에서는 breakpoint padding 제거
+  #year-archive & {
+    padding-right: 0 !important;
   }
+  
+  .archive:not(#year-archive) & {
+    @include breakpoint($medium) {
+      padding-right: $right-sidebar-width-narrow;
+    }
 
-  @include breakpoint($x-large) {
-    padding-right: $right-sidebar-width-wide;
+    @include breakpoint($large) {
+      padding-right: $right-sidebar-width;
+    }
+
+    @include breakpoint($x-large) {
+      padding-right: $right-sidebar-width-wide;
+    }
   }
 
   .page__meta {
-    margin: 0 0 4px;
+    margin: 0 0 0.5em; // Increased margin
   }
 }
 
