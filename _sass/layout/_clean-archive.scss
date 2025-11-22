@@ -250,17 +250,15 @@
   
   // Year Archive specific styles
   &#year-archive {
-    overflow: visible;  // overflow 명시적으로 허용
+    // 박스 내부에서 작동하도록 조정
     
     .archive__subtitle.year-header {
-      margin-top: 5em;  // 연도 헤더 위 간격 대폭 증가
-      margin-bottom: 2em;  // 연도 헤더 아래 간격
-      padding-bottom: 1em;
-      font-size: 2rem;  // 더 큰 폰트
+      margin: 3em 0 1.5em 0;  // 연도 헤더 간격 적절히 조정
+      padding-bottom: 0.75em;
+      font-size: 1.75rem;
       font-weight: 700;
       color: var(--heading-color, #212529);
-      border-bottom: 3px solid var(--primary-color, #667eea);
-      clear: both;  // float 클리어
+      border-bottom: 2px solid var(--primary-color, #667eea);
       
       &:first-of-type {
         margin-top: 0;
@@ -269,60 +267,52 @@
     
     // 연도별 그룹
     .year-group {
-      margin-bottom: 2em;
+      margin-bottom: 1em;
     }
     
     // 개별 포스트 wrapper
     .year-archive-post {
-      // 첫 번째 포스트는 연도 헤더와 간격
-      &:first-child {
-        padding-top: 2em;
-      }
+      // 포스트간 간격 - 적절하게 조정
+      margin-bottom: 3em;  // 포스트간 간격
+      padding-bottom: 3em;  // 하단 패딩
       
-      // 포스트간 간격 - 훨씬 넓게
       &:not(:last-child) {
-        padding-bottom: 6em;  // 포스트 하단 패딩 6em으로 대폭 증가
-        margin-bottom: 6em;   // 포스트간 마진 6em으로 대폭 증가
-        border-bottom: 1px dotted rgba(0, 0, 0, 0.1);  // 더 연한 구분선
+        border-bottom: 1px dotted rgba(0, 0, 0, 0.1);  // 구분선
       }
       
-      // 마지막 포스트
       &:last-child {
-        padding-bottom: 3em;
+        margin-bottom: 0;
+        padding-bottom: 0;
       }
       
       .list__item {
-        margin-bottom: 0;
-        padding-bottom: 0;
-        border: none !important;  // list__item의 border 제거
+        margin: 0;
+        padding: 0;
+        border: none;
         
         .archive__item {
-          padding: 2em 1em;  // 포스트 내부 패딩 증가, 좌우 패딩 추가
-          margin: 0;  // 마진 초기화
-          background: transparent;  // 배경 투명
-          border: none;  // 테두리 제거
+          padding: 1em 0;  // 적절한 내부 패딩
+          margin: 0;
+          background: transparent;
+          border: none;
         }
         
         .archive__item-title {
-          font-size: 1.35rem;  // 제목 크기 약간 증가
-          margin-bottom: 1em;  // 제목 하단 마진 증가
-          line-height: 1.4;  // 줄간격 조정
+          font-size: 1.25rem;
+          margin-bottom: 0.75em;
+          line-height: 1.4;
         }
         
         .page__meta,
         .page__date {
-          margin-bottom: 1em;  // 메타 정보 마진 증가
+          margin-bottom: 0.75em;
           font-size: 0.95rem;
           color: var(--text-color-light, #6c757d);
-          display: block;  // 블록 레벨로 변경
         }
         
         .archive__item-excerpt {
-          margin-top: 1em;  // excerpt 상단 마진 증가
-          margin-bottom: 0;
-          line-height: 1.7;  // 줄간격 증가
-          display: block;  // 블록 레벨로 명시
-          clear: both;  // float 클리어
+          margin-top: 0.75em;
+          line-height: 1.6;
         }
       }
     }
