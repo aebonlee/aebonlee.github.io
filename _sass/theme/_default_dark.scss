@@ -25,7 +25,50 @@ $sidebar-screen-min-width   : 1024px;
 
 /* Dark theme for the site */
 body[data-theme="dark"],
-html[data-theme="dark"],
+html[data-theme="dark"] {
+    /* Background colors */
+    --global-bg-color                   : #{$dark-background};
+    --global-bg-secondary               : #{$dark-background-secondary};
+    --global-footer-bg-color            : #{$dark-background-secondary};
+    
+    /* Text colors */
+    --global-text-color                 : #{$dark-text-primary};
+    --global-text-color-light           : #{$dark-text-secondary};
+    --global-base-color                 : #{$gray-400};
+    
+    /* Border colors */
+    --global-border-color               : #{$dark-border-primary};
+    --global-dark-border-color          : #{$gray-700};
+    
+    /* Link colors */
+    --global-link-color                 : #{$dark-link-primary};
+    --global-link-color-hover           : #{$dark-link-hover-primary};
+    --global-link-color-visited         : #{darken($dark-link-primary, 10%)};
+    
+    /* Code colors */
+    --global-code-background-color      : #{$gray-900};
+    --global-code-text-color            : #{$gray-300};
+    
+    /* Other colors */
+    --global-fig-caption-color          : #{$gray-400};
+    --global-masthead-link-color        : #{$gray-300};
+    --global-masthead-link-color-hover  : #{$gray-100};
+    --global-thead-color                : #{$gray-800};
+    
+    /* Status colors (adjusted for dark mode) */
+    --danger-color                      : #{lighten($danger-color, 10%)};
+    --info-color                        : #{lighten($info-color, 10%)};
+    --notice-color                      : #{lighten($notice-color, 10%)};
+    --success-color                     : #{lighten($success-color, 10%)};
+    --warning-color                     : #{lighten($warning-color, 10%)};
+    
+    /* Primary colors (adjusted for dark mode) */
+    --primary-color                     : #{lighten($primary-color, 10%)};
+    --secondary-color                   : #{lighten($secondary-color, 10%)};
+    --accent-color                      : #{lighten($accent-color, 10%)};
+}
+
+/* Auto dark mode based on system preference */
 @media (prefers-color-scheme: dark) {
     body:not([data-theme="light"]) {
         /* Background colors */
