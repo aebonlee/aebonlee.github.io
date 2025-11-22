@@ -1,0 +1,380 @@
+/* ==========================================================================
+   BLOG POST SPECIFIC STYLES
+   ========================================================================== */
+
+/* Blog post pages - override single layout */
+.layout--single {
+  /* Fix main container width */
+  #main {
+    width: 100%;
+    max-width: 100%;
+    padding: 1rem;
+    margin: 0 auto;
+    display: block; // Override flex
+    
+    @include breakpoint($medium) {
+      padding: 2rem;
+      max-width: $container-max-width;
+    }
+    
+    @include breakpoint($large) {
+      display: flex;
+      gap: 2rem;
+      padding: 2rem;
+    }
+    
+    @include breakpoint($x-large) {
+      padding: 3rem;
+    }
+  }
+  
+  /* Sidebar adjustments for blog posts */
+  .sidebar {
+    display: none; // Hide by default on mobile
+    
+    @include breakpoint($large) {
+      display: block;
+      flex: 0 0 280px;
+      min-width: 280px;
+      max-width: 280px;
+      position: sticky;
+      top: 80px;
+      height: fit-content;
+      padding: 1.5rem;
+      background: var(--global-bg-color);
+      border: 1px solid var(--global-border-color);
+      border-radius: 8px;
+    }
+    
+    @include breakpoint($x-large) {
+      flex: 0 0 300px;
+      min-width: 300px;
+      max-width: 300px;
+    }
+  }
+  
+  /* Main article for blog posts */
+  article.page {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 1.5rem;
+    background: var(--global-bg-color);
+    border: 1px solid var(--global-border-color);
+    border-radius: 8px;
+    
+    @include breakpoint($medium) {
+      padding: 2rem;
+    }
+    
+    @include breakpoint($large) {
+      flex: 1;
+      min-width: 0; // Prevent overflow
+      padding: 2.5rem;
+    }
+    
+    @include breakpoint($x-large) {
+      padding: 3rem;
+    }
+  }
+  
+  /* Inner content wrapper */
+  .page__inner-wrap {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    
+    /* Post header */
+    header {
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 2px solid var(--global-border-color);
+      
+      .page__title {
+        font-size: 1.75rem;
+        line-height: 1.3;
+        margin: 0 0 1rem 0;
+        color: var(--global-text-color);
+        word-break: keep-all;
+        
+        @include breakpoint($medium) {
+          font-size: 2rem;
+        }
+        
+        @include breakpoint($large) {
+          font-size: 2.25rem;
+        }
+        
+        @include breakpoint($x-large) {
+          font-size: 2.5rem;
+        }
+      }
+      
+      .page__meta,
+      .page__date {
+        color: var(--global-text-color-light);
+        font-size: 0.9rem;
+        margin-bottom: 0.25rem;
+        
+        i {
+          margin-right: 0.25rem;
+        }
+      }
+    }
+  }
+  
+  /* Post content */
+  .page__content {
+    max-width: 100%;
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--global-text-color);
+    
+    @include breakpoint($large) {
+      font-size: 1.0625rem;
+      line-height: 1.8;
+    }
+    
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 2em;
+      margin-bottom: 0.75em;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--global-text-color);
+    }
+    
+    h1 { font-size: 1.75rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.25rem; }
+    h4 { font-size: 1.125rem; }
+    h5 { font-size: 1rem; }
+    h6 { font-size: 0.875rem; }
+    
+    @include breakpoint($large) {
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.75rem; }
+      h3 { font-size: 1.5rem; }
+      h4 { font-size: 1.25rem; }
+      h5 { font-size: 1.125rem; }
+      h6 { font-size: 1rem; }
+    }
+    
+    /* First heading shouldn't have top margin */
+    > h1:first-child,
+    > h2:first-child,
+    > h3:first-child {
+      margin-top: 0;
+    }
+    
+    /* Paragraphs */
+    p {
+      margin: 0 0 1.5em 0;
+      text-align: justify;
+      word-break: keep-all;
+    }
+    
+    /* Lists */
+    ul, ol {
+      margin: 0 0 1.5em 0;
+      padding-left: 1.5em;
+      
+      @include breakpoint($large) {
+        padding-left: 2em;
+      }
+      
+      li {
+        margin-bottom: 0.5em;
+        line-height: 1.7;
+        
+        > ul, > ol {
+          margin-top: 0.5em;
+          margin-bottom: 0.5em;
+        }
+      }
+    }
+    
+    /* Images */
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 2em auto;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Code blocks */
+    pre {
+      max-width: 100%;
+      overflow-x: auto;
+      margin: 1.5em 0;
+      padding: 1em;
+      background: var(--global-code-background-color);
+      border: 1px solid var(--global-border-color);
+      border-radius: 4px;
+      font-size: 0.875rem;
+      line-height: 1.5;
+      
+      code {
+        background: none;
+        border: none;
+        padding: 0;
+        color: var(--global-code-text-color);
+      }
+    }
+    
+    /* Inline code */
+    code {
+      background: var(--global-code-background-color);
+      border: 1px solid var(--global-border-color);
+      border-radius: 3px;
+      padding: 0.125em 0.25em;
+      font-size: 0.875em;
+      color: var(--global-code-text-color);
+    }
+    
+    /* Blockquotes */
+    blockquote {
+      margin: 1.5em 0;
+      padding: 1em 1.5em;
+      background: var(--global-bg-secondary, #f8f9fa);
+      border-left: 4px solid var(--primary-color, #667eea);
+      border-radius: 0 4px 4px 0;
+      font-style: italic;
+      
+      p:last-child {
+        margin-bottom: 0;
+      }
+    }
+    
+    /* Tables */
+    table {
+      width: 100%;
+      margin: 1.5em 0;
+      border-collapse: collapse;
+      overflow-x: auto;
+      display: block;
+      
+      thead {
+        background: var(--global-thead-color);
+        
+        th {
+          padding: 0.75em;
+          text-align: left;
+          border: 1px solid var(--global-border-color);
+          font-weight: 600;
+        }
+      }
+      
+      tbody {
+        td {
+          padding: 0.75em;
+          border: 1px solid var(--global-border-color);
+        }
+        
+        tr:hover {
+          background: var(--global-bg-secondary, #f8f9fa);
+        }
+      }
+    }
+    
+    /* Horizontal rules */
+    hr {
+      margin: 2em 0;
+      border: none;
+      border-top: 2px solid var(--global-border-color);
+    }
+    
+    /* Links */
+    a {
+      color: var(--global-link-color);
+      text-decoration: none;
+      border-bottom: 1px dotted var(--global-link-color);
+      transition: all 0.2s ease;
+      
+      &:hover {
+        color: var(--global-link-color-hover);
+        border-bottom-style: solid;
+      }
+    }
+  }
+  
+  /* Post footer */
+  footer.page__meta {
+    margin-top: 3em;
+    padding-top: 2em;
+    border-top: 1px solid var(--global-border-color);
+    
+    .page__taxonomy {
+      margin-bottom: 1em;
+      
+      strong {
+        margin-right: 0.5em;
+      }
+      
+      a {
+        display: inline-block;
+        margin: 0.25em 0.5em 0.25em 0;
+        padding: 0.25em 0.75em;
+        background: var(--global-bg-secondary, #f8f9fa);
+        border: 1px solid var(--global-border-color);
+        border-radius: 4px;
+        font-size: 0.875rem;
+        text-decoration: none;
+        
+        &:hover {
+          background: var(--primary-color, #667eea);
+          color: white;
+          border-color: var(--primary-color, #667eea);
+        }
+      }
+    }
+  }
+  
+  /* Post navigation */
+  .post_pagination {
+    margin-top: 2em;
+    padding-top: 2em;
+    border-top: 1px solid var(--global-border-color);
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+    
+    a {
+      flex: 1;
+      padding: 1em;
+      background: var(--global-bg-secondary, #f8f9fa);
+      border: 1px solid var(--global-border-color);
+      border-radius: 4px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      
+      &:hover {
+        background: var(--primary-color, #667eea);
+        color: white;
+        border-color: var(--primary-color, #667eea);
+      }
+    }
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: $large - 1px) {
+  .layout--single {
+    .page__content {
+      font-size: 1rem;
+      
+      h1 { font-size: 1.5rem; }
+      h2 { font-size: 1.25rem; }
+      h3 { font-size: 1.125rem; }
+      h4 { font-size: 1rem; }
+      h5 { font-size: 0.875rem; }
+      h6 { font-size: 0.8125rem; }
+      
+      p {
+        text-align: left; // Better readability on mobile
+      }
+    }
+  }
+}
