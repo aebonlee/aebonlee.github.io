@@ -248,6 +248,39 @@
     }
   }
   
+  // Year Archive specific styles
+  &#year-archive {
+    .archive__subtitle {
+      margin-top: 3.5em;
+      margin-bottom: 2em;
+      padding-bottom: 1em;
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--heading-color, #212529);
+      border-bottom: 3px solid var(--primary-color, #667eea);
+      
+      &:first-of-type {
+        margin-top: 0;
+      }
+    }
+    
+    .list__item {
+      margin-bottom: 2.5em;
+      padding-bottom: 2em;
+      
+      .archive__item-title {
+        font-size: 1.25rem;
+        margin-bottom: 0.75em;
+      }
+      
+      .page__meta {
+        margin-bottom: 0.75em;
+        font-size: 0.95rem;
+        color: var(--text-color-light, #6c757d);
+      }
+    }
+  }
+  
   // Feature row for home page
   .feature__wrapper {
     display: grid;
