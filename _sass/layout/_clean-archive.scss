@@ -266,9 +266,9 @@
     }
     
     .archive__subtitle.year-header {
-      margin: 2rem 0 1rem 0;  // 상하 마진 감소
-      padding-bottom: 0.5rem;
-      font-size: 1.4rem;
+      margin: 3rem 0 1.5rem 0;  // 연도간 간격 증가
+      padding-bottom: 0.75rem;
+      font-size: 1.5rem;  // 약간 크게
       font-weight: 700;
       color: var(--heading-color, #212529);
       border-bottom: 2px solid var(--primary-color, #667eea);
@@ -289,15 +289,15 @@
     
     // 개별 포스트 wrapper  
     .year-archive-post {
-      padding: 1rem 0;  // 패딩 감소
+      padding: 1.5rem 0;  // 적절한 패딩
       margin: 0;
       width: 100%;
       box-sizing: border-box;
       
       &:not(:last-child) {
-        margin-bottom: 1.5rem;  // 포스트간 간격 감소
-        padding-bottom: 1.5rem;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        margin-bottom: 2.5rem;  // 포스트간 간격 증가
+        padding-bottom: 2.5rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
       }
       
       &:last-child {
