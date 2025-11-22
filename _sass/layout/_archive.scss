@@ -118,16 +118,23 @@
     }
   }
   
-  @include breakpoint($medium) {
-    padding-right: $right-sidebar-width-narrow;
+  // year-archive에서는 breakpoint padding 제거
+  #year-archive & {
+    padding-right: 0 !important;
   }
+  
+  .archive:not(#year-archive) & {
+    @include breakpoint($medium) {
+      padding-right: $right-sidebar-width-narrow;
+    }
 
-  @include breakpoint($large) {
-    padding-right: $right-sidebar-width;
-  }
+    @include breakpoint($large) {
+      padding-right: $right-sidebar-width;
+    }
 
-  @include breakpoint($x-large) {
-    padding-right: $right-sidebar-width-wide;
+    @include breakpoint($x-large) {
+      padding-right: $right-sidebar-width-wide;
+    }
   }
 
   .page__meta {
