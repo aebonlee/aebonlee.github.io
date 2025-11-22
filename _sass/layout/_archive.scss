@@ -40,8 +40,18 @@
     margin-top: 1.5em;
   }
 
-  + .list__item .archive__item-title {
-    margin-top: 1em; // More space after year header
+  // First post after year header needs extra spacing
+  + .list__item {
+    margin-top: 2em; // Much more space after year header
+    
+    .archive__item-title {
+      margin-top: 0; // Reset the title margin
+    }
+  }
+  
+  // Subsequent items
+  + .list__item + .list__item {
+    margin-top: 0; // Normal spacing for other items
   }
 }
 

@@ -250,11 +250,11 @@
   
   // Year Archive specific styles
   &#year-archive {
-    .archive__subtitle {
-      margin-top: 3.5em;
-      margin-bottom: 2em;
+    .archive__subtitle.year-header {
+      margin-top: 5em;  // 연도 헤더 위 간격 대폭 증가
+      margin-bottom: 1em;  // 연도 헤더 아래 간격은 줄이고
       padding-bottom: 1em;
-      font-size: 1.75rem;
+      font-size: 2rem;  // 더 큰 폰트
       font-weight: 700;
       color: var(--heading-color, #212529);
       border-bottom: 3px solid var(--primary-color, #667eea);
@@ -264,19 +264,35 @@
       }
     }
     
-    .list__item {
-      margin-bottom: 2.5em;
-      padding-bottom: 2em;
+    // 연도별 포스트 wrapper
+    .year-archive-post {
+      padding-top: 2.5em;  // 연도 헤더와 첫 포스트 사이 충분한 간격
       
-      .archive__item-title {
-        font-size: 1.25rem;
-        margin-bottom: 0.75em;
+      &:not(:last-child) {
+        padding-bottom: 2em;
+        margin-bottom: 1.5em;
+        border-bottom: 1px solid var(--border-color, #dee2e6);
       }
       
-      .page__meta {
-        margin-bottom: 0.75em;
-        font-size: 0.95rem;
-        color: var(--text-color-light, #6c757d);
+      .list__item {
+        margin-bottom: 0;  // list__item 자체 마진 제거
+        padding-bottom: 0;
+        
+        .archive__item-title {
+          font-size: 1.25rem;
+          margin-bottom: 0.75em;
+        }
+        
+        .page__meta,
+        .page__date {
+          margin-bottom: 0.75em;
+          font-size: 0.95rem;
+          color: var(--text-color-light, #6c757d);
+        }
+        
+        .archive__item-excerpt {
+          margin-top: 0.75em;
+        }
       }
     }
   }
