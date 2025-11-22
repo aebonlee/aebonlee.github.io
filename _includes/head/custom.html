@@ -14,4 +14,50 @@
 <link rel="icon" href="/images/favicon.ico"/>
 <meta name="theme-color" content="#ffffff"/>
 
+<!-- SEO 메타 태그 개선 -->
+<meta name="author" content="이애본">
+<meta name="robots" content="index, follow">
+<meta name="keywords" content="이애본, AI교육, 직업훈련, 정보관리, 한신대학교, 빅데이터, 웹개발, AHP">
+
+<!-- Open Graph 메타 태그 -->
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="이애본 학술 포트폴리오">
+<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+<meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+<meta property="og:type" content="{% if page.date %}article{% else %}website{% endif %}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:image" content="{{ site.url }}/images/profile.png">
+
+<!-- Twitter 카드 -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+<meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+<meta name="twitter:image" content="{{ site.url }}/images/profile.png">
+
+<!-- 성능 최적화 -->
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+
+<!-- 구조화된 데이터 (Schema.org) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "이애본",
+  "jobTitle": "한국직업능력개발센터장",
+  "affiliation": {
+    "@type": "Organization",
+    "name": "한신대학교"
+  },
+  "url": "https://aebonlee.github.io",
+  "email": "aebon@kyonggi.ac.kr",
+  "sameAs": [
+    "https://github.com/aebonlee",
+    "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
+  ]
+}
+</script>
+
 <!-- end custom head snippets -->

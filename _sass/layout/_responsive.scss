@@ -1,0 +1,146 @@
+/* ==========================================================================
+   RESPONSIVE DESIGN IMPROVEMENTS
+   ========================================================================== */
+
+/* Mobile First Approach */
+@media (max-width: 768px) {
+  /* Navigation improvements */
+  .greedy-nav {
+    button {
+      padding: 0.5rem;
+    }
+    
+    .visible-links {
+      font-size: 0.9rem;
+    }
+  }
+
+  /* Main content padding adjustment */
+  #main {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  /* Author profile mobile optimization */
+  .author__avatar {
+    display: block;
+    width: auto;
+    margin: 0 auto 1rem;
+  }
+
+  .author__content {
+    text-align: center;
+  }
+
+  .author__urls {
+    display: none;
+  }
+
+  /* Table responsive */
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  /* Code blocks responsive */
+  pre {
+    overflow-x: auto;
+    padding: 1rem 0.5rem;
+  }
+
+  /* Typography adjustments */
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+  
+  /* Card layouts for mobile */
+  .archive__item {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+  }
+}
+
+/* Tablet optimization */
+@media (min-width: 769px) and (max-width: 1024px) {
+  #main {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .page {
+    padding: 0 1rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  /* Hide navigation and sidebar */
+  .masthead,
+  .sidebar,
+  .page__share,
+  .page__related {
+    display: none !important;
+  }
+
+  /* Optimize content for print */
+  #main {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Ensure links are visible */
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  /* Page breaks */
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+
+  img, figure {
+    page-break-inside: avoid;
+  }
+}
+
+/* High DPI screens */
+@media 
+  (-webkit-min-device-pixel-ratio: 2), 
+  (min-resolution: 192dpi) {
+  /* Use higher resolution images if available */
+  .author__avatar img {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+  }
+
+  .page__content {
+    a {
+      color: #66b3ff;
+    }
+  }
+
+  .archive__item {
+    background-color: #2a2a2a;
+    border-color: #3a3a3a;
+  }
+}

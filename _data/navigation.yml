@@ -8,23 +8,23 @@
 #      Markdown formatted page while the second is generated using JSON.
 
 main:
-  - title: "About"
+  - title: "소개"
     url: /
     
-  - title: "CV"
+  - title: "이력서"
     url: /cv/
 
-  - title: "Publications"
+  - title: "논문"
     url: /publications/
 
-  - title: "Research"
-    url: /talks/    
-
-  - title: "Qualification"
-    url: /qualification/
-
-  - title: "Portfolio"
+  - title: "프로젝트"
     url: /portfolio/
+
+  - title: "강의"
+    url: /teaching/
         
-  - title: "Blog"
+  - title: "블로그"
     url: /year-archive/
+    
+  - title: "자격증"
+    url: /qualification/

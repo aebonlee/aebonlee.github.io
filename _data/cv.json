@@ -1,16 +1,16 @@
 {
   "basics": {
-    "name": "Your Sidebar Name",
-    "email": "none@example.org",
+    "name": "이애본",
+    "email": "aebon@kyonggi.ac.kr",
     "phone": "",
-    "website": "https://academicpages.github.io",
-    "summary": "Currently employed at Red Brick University. Short biography for the left-hand sidebar",
+    "website": "https://aebonlee.github.io",
+    "summary": "한국직업능력개발센터장 | 한신대학교 AI·SW대학 겸임교수 | 직업훈련과 고용정책, AI 및 정보관리 전문가",
     "location": {
       "address": "",
       "postalCode": "",
-      "city": "Earth",
-      "countryCode": "US",
-      "region": ""
+      "city": "서울",
+      "countryCode": "KR",
+      "region": "서울특별시"
     },
     "profiles": [
       {
@@ -19,134 +19,204 @@
         "url": "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
       },
       {
-        "network": "ORCID",
-        "username": "",
-        "url": "http://orcid.org/yourorcidurl"
-      },
-      {
         "network": "GitHub",
-        "username": "academicpages",
-        "url": "https://github.com/academicpages"
+        "username": "aebonlee",
+        "url": "https://github.com/aebonlee"
       }
     ]
   },
-  "work": [],
+  "work": [
+    {
+      "company": "한신대학교",
+      "position": "AI·SW대학 겸임교수",
+      "startDate": "2025-01",
+      "endDate": "",
+      "summary": "인공지능 및 소프트웨어 교육"
+    },
+    {
+      "company": "한국직업능력개발센터",
+      "position": "센터장",
+      "startDate": "2020-01",
+      "endDate": "",
+      "summary": "직업훈련 프로그램 개발 및 운영, IT 교육 및 컨설팅"
+    },
+    {
+      "company": "한국기술대학교",
+      "position": "외래교수",
+      "startDate": "2017-01",
+      "endDate": "",
+      "summary": "빅데이터 분석, 웹프로그래밍, AI 기초 강의"
+    },
+    {
+      "company": "드림아이티 기술연구소",
+      "position": "대표/연구소장",
+      "startDate": "2003-01",
+      "endDate": "2009-12",
+      "summary": "IT 솔루션 개발 및 연구프로젝트 수행"
+    }
+  ],
   "education": [
     {
-      "institution": "GitHub University",
-      "area": "Ph.D in Version Control Theory",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2018",
+      "institution": "서울벤처대학원대학교",
+      "area": "융합산업학과 정보관리전공",
+      "studyType": "박사과정",
+      "startDate": "2024-03",
+      "endDate": "2026-02",
       "gpa": null,
-      "courses": []
+      "courses": ["정보관리", "AI 활용", "빅데이터 분석"]
     },
     {
-      "institution": "GitHub University",
-      "area": "M.S. in Jekyll",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2014",
+      "institution": "경기대학교 일반대학원",
+      "area": "직업학과 직업훈련과 고용정책전공",
+      "studyType": "박사과정 수료",
+      "startDate": "2017-03",
+      "endDate": "2019-08",
       "gpa": null,
-      "courses": []
+      "courses": ["직업교육학", "고용정책", "HRD"]
     },
     {
-      "institution": "GitHub University",
-      "area": "B.S. in GitHub",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2012",
+      "institution": "한국방송통신대학교 대학원",
+      "area": "정보과학과",
+      "studyType": "석사",
+      "startDate": "2007-03",
+      "endDate": "2012-02",
       "gpa": null,
-      "courses": []
+      "courses": ["RFID 시스템", "정보시스템", "소프트웨어공학"]
+    },
+    {
+      "institution": "한국방송통신대학교",
+      "area": "컴퓨터과학과 / 경영학과",
+      "studyType": "학사",
+      "startDate": "2001-03",
+      "endDate": "2007-02",
+      "gpa": null,
+      "courses": ["컴퓨터과학", "경영학", "프로그래밍"]
     }
   ],
-  "skills": [],
-  "languages": [],
-  "interests": [],
-  "references": [],
+  "awards": [
+    {
+      "title": "산업통상자원부 장관상",
+      "date": "2022",
+      "awarder": "산업통상자원부",
+      "summary": "TBT고위과정 연구프로젝트 최우수상"
+    },
+    {
+      "title": "고용노동부 장관상",
+      "date": "2021",
+      "awarder": "고용노동부",
+      "summary": "직업능력의 달 훈련교사 부문"
+    },
+    {
+      "title": "2021 자랑스러운 혁신한국인&파워브랜드 대상",
+      "date": "2021",
+      "awarder": "신년기획",
+      "summary": "인적자원개발 부문"
+    },
+    {
+      "title": "고용노동부 장관상",
+      "date": "2017",
+      "awarder": "고용노동부",
+      "summary": "직업능력의 달 훈련교사 부문"
+    }
+  ],
   "publications": [
     {
-      "name": "Paper Title Number 1",
-      "publisher": "Journal 1",
-      "releaseDate": "2009-10-01",
-      "website": "http://academicpages.github.io/files/paper1.pdf",
-      "summary": "This paper is about the number 1. The number 2 is left for future work."
+      "name": "사회적 지능이 학업열의와 학업만족도에 미치는 영향에 관한 연구",
+      "publisher": "JCCT",
+      "releaseDate": "2025-03-31",
+      "summary": "A Study on the effect of social intelligence on academic helplessness and academic satisfaction"
     },
     {
-      "name": "Paper Title Number 2",
-      "publisher": "Journal 1",
-      "releaseDate": "2010-10-01",
-      "website": "http://academicpages.github.io/files/paper2.pdf",
-      "summary": "This paper is about the number 2. The number 3 is left for future work."
+      "name": "The Impact Analysis of Household Variables Factors on the Spending for Preschool Children's Private Education",
+      "publisher": "IJACT",
+      "releaseDate": "2022-09-01",
+      "summary": "KCI 등재 국제학술지 논문"
     },
     {
-      "name": "Paper Title Number 3",
-      "publisher": "Journal 1",
-      "releaseDate": "2015-10-01",
-      "website": "http://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about the number 3. The number 4 is left for future work."
-    },
-    {
-      "name": "Paper Title Number 4",
-      "publisher": "GitHub Journal of Bugs",
-      "releaseDate": "2024-02-17",
-      "website": "http://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about fixing template issue #693."
+      "name": "RFID 기술을 이용한 시각 장애인용 길 안내 시스템 설계",
+      "publisher": "한국방송통신대학교",
+      "releaseDate": "2012-02-01",
+      "summary": "석사학위논문"
     }
   ],
-  "presentations": [
+  "skills": [
     {
-      "name": "Talk 1 on Relevant Topic in Your Field",
-      "event": "UC San Francisco, Department of Testing",
-      "date": "2012-03-01",
-      "location": "San Francisco, CA, USA",
-      "description": ""
+      "name": "프로그래밍",
+      "level": "전문가",
+      "keywords": ["Python", "JavaScript", "Java", "PHP", "SQL"]
     },
     {
-      "name": "Tutorial 1 on Relevant Topic in Your Field",
-      "event": "UC-Berkeley Institute for Testing Science",
-      "date": "2013-03-01",
-      "location": "Berkeley, CA, USA",
-      "description": ""
+      "name": "데이터 분석",
+      "level": "전문가",
+      "keywords": ["빅데이터", "데이터 시각화", "통계분석", "머신러닝"]
     },
     {
-      "name": "Talk 2 on Relevant Topic in Your Field",
-      "event": "London School of Testing",
-      "date": "2014-02-01",
-      "location": "London, UK",
-      "description": ""
+      "name": "웹 개발",
+      "level": "전문가",
+      "keywords": ["Full-Stack", "React", "Node.js", "웹 디자인"]
     },
     {
-      "name": "Conference Proceeding talk 3 on Relevant Topic in Your Field",
-      "event": "Testing Institute of America 2014 Annual Conference",
-      "date": "2014-03-01",
-      "location": "Los Angeles, CA, USA",
-      "description": ""
+      "name": "AI/ML",
+      "level": "숙련",
+      "keywords": ["생성형 AI", "ChatGPT", "LLM", "AI 활용"]
+    },
+    {
+      "name": "교육/훈련",
+      "level": "전문가",
+      "keywords": ["직업교육", "커리큘럼개발", "교수설계", "평가"]
     }
   ],
-  "teaching": [
+  "languages": [
     {
-      "course": "Teaching experience 1",
-      "institution": "University 1, Department",
-      "date": "2014-01-01",
-      "role": "Undergraduate course",
-      "description": ""
+      "language": "한국어",
+      "fluency": "원어민"
     },
     {
-      "course": "Teaching experience 2",
-      "institution": "University 1, Department",
-      "date": "2015-01-01",
-      "role": "Workshop",
-      "description": ""
+      "language": "영어",
+      "fluency": "중급"
     }
   ],
-  "portfolio": [
+  "certificates": [
     {
-      "name": "Portfolio item number 1",
-      "category": "portfolio",
+      "name": "직업능력개발훈련교사 2급",
+      "issuer": "고용노동부",
+      "date": "2001",
+      "summary": "16개 분야"
+    },
+    {
+      "name": "평생교육사 2급",
+      "issuer": "교육부",
       "date": "",
-      "url": "",
-      "description": "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+      "summary": ""
+    },
+    {
+      "name": "한국어교원 2급",
+      "issuer": "문화체육관광부",
+      "date": "",
+      "summary": ""
+    }
+  ],
+  "projects": [
+    {
+      "name": "AHP 연구 프로젝트 웹앱",
+      "startDate": "2024",
+      "endDate": "",
+      "summary": "계층적 분석 프로세스 기반 의사결정 지원 시스템 개발",
+      "url": "https://github.com/aebonlee/ahp-platform"
+    },
+    {
+      "name": "비대면 학습지원시스템 HRDTMS",
+      "startDate": "2020",
+      "endDate": "2023",
+      "summary": "직업훈련기관용 온라인 학습관리시스템 개발",
+      "url": ""
+    },
+    {
+      "name": "시각장애인 네비게이션 시스템",
+      "startDate": "2007",
+      "endDate": "2012",
+      "summary": "RFID 기술 기반 시각장애인용 길안내 시스템",
+      "url": ""
     }
   ]
 }
