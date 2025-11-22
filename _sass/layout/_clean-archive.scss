@@ -1,0 +1,333 @@
+/* ==========================================================================
+   CLEAN ARCHIVE LAYOUT - FOR LIST PAGES
+   ========================================================================== */
+
+// Import variables
+@import "layout-variables";
+
+// Archive pages (blog list, teaching list, etc.)
+.layout--archive,
+.layout--home,
+.layout--categories,
+.layout--tags,
+.layout--year-archive,
+.layout--collection {
+  
+  // Main container - same as single
+  #main {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 30px;
+    align-items: start;
+    
+    @media (max-width: 1023px) {
+      grid-template-columns: 1fr;
+      padding: 15px;
+      gap: 20px;
+    }
+  }
+  
+  // Sidebar - same as single
+  .sidebar {
+    background: white;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    padding: 20px;
+    position: sticky;
+    top: 80px;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    
+    @media (max-width: 1023px) {
+      display: none;
+    }
+  }
+  
+  // Archive content wrapper
+  .archive {
+    background: white;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    padding: 30px;
+    min-height: 500px;
+    
+    @media (max-width: 767px) {
+      padding: 20px;
+    }
+  }
+  
+  // Archive title
+  .page__title,
+  .archive__title {
+    margin: 0 0 30px 0;
+    padding-bottom: 15px;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #212529;
+    border-bottom: 2px solid #dee2e6;
+    
+    @media (max-width: 767px) {
+      font-size: 1.5rem;
+    }
+  }
+  
+  // Archive subtitle
+  .archive__subtitle {
+    margin: -20px 0 30px 0;
+    font-size: 1.125rem;
+    color: #6c757d;
+  }
+  
+  // Archive items container
+  .entries-list,
+  .list__item {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  // Individual archive item
+  .archive__item {
+    padding: 20px;
+    margin-bottom: 20px;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-color: #0969da;
+      
+      .archive__item-title a {
+        color: #0969da;
+      }
+    }
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  // Archive item title
+  .archive__item-title {
+    margin: 0 0 10px 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.3;
+    
+    a {
+      color: #212529;
+      text-decoration: none;
+      transition: color 0.2s;
+      
+      &:hover {
+        color: #0969da;
+      }
+    }
+    
+    // Remove any markers
+    .archive__item-title-marker {
+      display: none;
+    }
+  }
+  
+  // Archive item meta
+  .archive__item-meta {
+    margin: 0 0 10px 0;
+    font-size: 0.875rem;
+    color: #6c757d;
+    
+    span {
+      margin-right: 15px;
+      
+      i {
+        margin-right: 5px;
+      }
+    }
+  }
+  
+  // Archive item excerpt
+  .archive__item-excerpt {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #495057;
+    
+    p {
+      margin: 0;
+    }
+  }
+  
+  // Archive item teaser (image)
+  .archive__item-teaser {
+    margin-bottom: 15px;
+    border-radius: 6px;
+    overflow: hidden;
+    
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+  
+  // Pagination for archive pages
+  .pagination {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid #dee2e6;
+    text-align: center;
+    
+    ul {
+      display: inline-flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      gap: 8px;
+    }
+    
+    li {
+      a, span {
+        display: block;
+        padding: 8px 12px;
+        background: #f8f9fa;
+        border: 1px solid #dee2e6;
+        border-radius: 4px;
+        color: #495057;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: all 0.2s;
+      }
+      
+      a:hover {
+        background: #0969da;
+        border-color: #0969da;
+        color: white;
+      }
+      
+      &.current {
+        span {
+          background: #0969da;
+          border-color: #0969da;
+          color: white;
+        }
+      }
+      
+      &.disabled {
+        span {
+          opacity: 0.5;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+  
+  // Grid layout for portfolio/gallery
+  .grid__wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    
+    .archive__item {
+      margin-bottom: 0;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      
+      .archive__item-excerpt {
+        flex: 1;
+      }
+    }
+  }
+  
+  // Feature row for home page
+  .feature__wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+    
+    .feature__item {
+      background: white;
+      border: 1px solid #dee2e6;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      
+      &-teaser {
+        margin-bottom: 15px;
+        
+        img {
+          max-width: 100%;
+          height: auto;
+          border-radius: 6px;
+        }
+      }
+      
+      .archive__item-title {
+        font-size: 1.125rem;
+        margin-bottom: 10px;
+      }
+      
+      .archive__item-excerpt {
+        font-size: 0.95rem;
+      }
+      
+      .btn {
+        margin-top: 15px;
+      }
+    }
+  }
+}
+
+// Specific adjustments for different archive types
+.layout--categories,
+.layout--tags {
+  .taxonomy__section {
+    margin-bottom: 30px;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    .taxonomy__title {
+      margin: 0 0 15px 0;
+      padding: 10px 15px;
+      background: #f8f9fa;
+      border-left: 4px solid #0969da;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    
+    .taxonomy__list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      
+      .archive__item {
+        padding: 15px;
+        margin-bottom: 10px;
+        background: white;
+        border: 1px solid #e9ecef;
+      }
+    }
+  }
+}
+
+// Year archive specific
+.layout--year-archive {
+  .archive-year {
+    margin: 0 0 30px 0;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #dee2e6;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #212529;
+  }
+}

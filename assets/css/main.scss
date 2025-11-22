@@ -39,61 +39,27 @@ $content-max-width: calc(100% - #{$sidebar-width} - 80px) !default;
 
     "layout/forms",
 
-    "layout/page",
-    "layout/archive",
-    "layout/sidebar",
-    "layout/reset-layout",
+    "layout/clean-single",
+    "layout/clean-archive",
     "layout/json_cv",
-    "layout/responsive",
 
     "vendor/font-awesome/fontawesome",
     "vendor/font-awesome/solid",
     "vendor/font-awesome/brands"
 ;
 
-/* Base document styles */
-html {
-  height: 100%;
-  font-size: 16px;
-  box-sizing: border-box;
-}
+/* Reset and base styles in _clean-single.scss */
 
-*, *::before, *::after {
-  box-sizing: inherit;
-}
-
-body {
-  position: relative;
-  background: #f5f7fa;
-  color: #333;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  display: flex;
-  flex-direction: column;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  
-  &[data-theme="dark"] {
-    background: #1a1a1a;
-    color: #e9ecef;
-  }
-}
-
-/* Main content wrapper */
+/* Main wrapper */
 .main-wrapper {
   flex: 1 0 auto;
-  display: flex;
-  flex-direction: column;
 }
-
-
 
 /* Masthead */
 .masthead {
   background: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid #e5e5e5;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid #dee2e6;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -102,15 +68,16 @@ body {
 /* Footer */
 .page__footer {
   background: white;
-  margin-top: auto;
-  padding: 2em 0;
-  border-top: 1px solid #e5e5e5;
+  margin-top: 40px;
+  padding: 30px 0;
+  border-top: 1px solid #dee2e6;
   
   footer {
-    max-width: $container-max-width;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 2em;
+    padding: 0 20px;
     text-align: center;
-    color: #666;
+    color: #6c757d;
+    font-size: 0.9rem;
   }
 }
