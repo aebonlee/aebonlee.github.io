@@ -482,11 +482,11 @@
   }
 }
 
-// Clean up body background
+// Clean up body background - transparent for animated background
 body {
   margin: 0;
   padding: 0;
-  background: #f5f7fa;
+  background: transparent;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
