@@ -183,9 +183,10 @@ redirect_from:
     {% capture written_year %}{{ year }}{% endcapture %}
   {% endif %}
   {% include archive-single.html %}
-  <p></p><p></p>
 {% endfor %}
 
+ <p></p><br>
+ 
 {% if site.posts.size == 0 %}
 <div style="text-align: center; padding: 3em; color: var(--global-text-color-light, #666);">
   <i class="fa fa-file-text" style="font-size: 3em; margin-bottom: 1em; display: block;"></i>
