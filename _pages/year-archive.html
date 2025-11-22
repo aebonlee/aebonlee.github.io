@@ -1,19 +1,186 @@
 ---
 layout: archive
 permalink: /year-archive/
-title: "Blog posts"
+title: "Publications by Year"
 author_profile: true
+header:
+  overlay_color: "#5e616c"
+  overlay_filter: "0.5"
 redirect_from:
   - /wordpress/blog-posts/
+  - /blog-posts/
 ---
 
 {% include base_path %}
+
+<style>
+.year-archive-intro {
+  margin-bottom: 2em;
+  padding: 1.5em;
+  background: var(--global-background-color, #f8f9fa);
+  border-radius: 8px;
+  border-left: 4px solid var(--link-color, #0366d6);
+}
+
+.archive__subtitle {
+  font-size: 1.5em !important;
+  font-weight: 600;
+  color: var(--global-text-color, #333);
+  margin: 2em 0 1em 0;
+  padding: 0.75em 1em;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 8px;
+  border-left: 5px solid var(--link-color, #0366d6);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.archive__item {
+  margin-bottom: 1.5em;
+  padding: 1.25em;
+  background: var(--global-background-color, #fff);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  border: 1px solid var(--global-border-color, #e1e4e8);
+}
+
+.archive__item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  border-color: var(--link-color, #0366d6);
+}
+
+.archive__item-title {
+  font-size: 1.2em !important;
+  font-weight: 600;
+  margin-bottom: 0.75em;
+  line-height: 1.4;
+}
+
+.archive__item-title a {
+  color: var(--global-text-color, #333);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.archive__item-title a:hover {
+  color: var(--link-color, #0366d6);
+  text-decoration: none;
+}
+
+.page__meta {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin: 0.5em 0;
+  color: var(--global-text-color-light, #666);
+  font-size: 0.9em;
+}
+
+.page__meta i {
+  color: var(--link-color, #0366d6);
+}
+
+.archive__item-excerpt {
+  color: var(--global-text-color-light, #666);
+  font-size: 0.95em;
+  line-height: 1.6;
+  margin-top: 0.75em;
+}
+
+.stats-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1em;
+  margin: 2em 0;
+}
+
+.stat-card {
+  background: var(--global-background-color, #fff);
+  padding: 1.5em;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid var(--global-border-color, #e1e4e8);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+  font-size: 2em;
+  font-weight: 700;
+  color: var(--link-color, #0366d6);
+  display: block;
+}
+
+.stat-label {
+  color: var(--global-text-color-light, #666);
+  font-size: 0.9em;
+  margin-top: 0.5em;
+}
+
+@media (max-width: 768px) {
+  .archive__item {
+    margin-bottom: 1em;
+    padding: 1em;
+  }
+  
+  .year-archive-intro {
+    padding: 1em;
+  }
+  
+  .archive__subtitle {
+    font-size: 1.3em !important;
+    padding: 0.5em;
+    margin: 1.5em 0 0.75em 0;
+  }
+}
+</style>
+
+<div class="year-archive-intro">
+  <h3 style="margin-top: 0; color: var(--link-color, #0366d6);">
+    <i class="fa fa-calendar" aria-hidden="true"></i> Research & Publications Archive
+  </h3>
+  <p style="margin-bottom: 0; line-height: 1.6;">
+    Explore my academic journey through publications, research projects, and scholarly contributions organized chronologically. Each entry represents a milestone in my academic and professional development.
+  </p>
+</div>
+
+{% assign total_posts = site.posts | size %}
+{% assign years = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+
+<div class="stats-summary">
+  <div class="stat-card">
+    <span class="stat-number">{{ total_posts }}</span>
+    <span class="stat-label">Total Publications</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-number">{{ years | size }}</span>
+    <span class="stat-label">Years Active</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-number">{{ site.posts | where: "collection", "publications" | size }}</span>
+    <span class="stat-label">Research Papers</span>
+  </div>
+</div>
+
 {% capture written_year %}'None'{% endcapture %}
 {% for post in site.posts %}
   {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
   {% if year != written_year %}
-    <h2 id="{{ year | slugify }}" class="archive__subtitle">{{ year }}</h2>
+    <h2 id="{{ year | slugify }}" class="archive__subtitle">
+      <i class="fa fa-calendar-check" aria-hidden="true"></i> {{ year }}
+      <span style="font-size: 0.7em; font-weight: normal; margin-left: 1em; color: var(--global-text-color-light, #666);">
+        ({{ site.posts | where_exp: "item", "item.date contains year" | size }} publications)
+      </span>
+    </h2>
     {% capture written_year %}{{ year }}{% endcapture %}
   {% endif %}
   {% include archive-single.html %}
 {% endfor %}
+
+{% if site.posts.size == 0 %}
+<div style="text-align: center; padding: 3em; color: var(--global-text-color-light, #666);">
+  <i class="fa fa-file-text" style="font-size: 3em; margin-bottom: 1em; display: block;"></i>
+  <h3>No publications yet</h3>
+  <p>Publications and blog posts will appear here as they are added.</p>
+</div>
+{% endif %}
