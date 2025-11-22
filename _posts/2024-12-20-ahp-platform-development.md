@@ -2,6 +2,8 @@
 title: 'AHP 의사결정 지원 플랫폼 개발기: React와 Django로 구현하는 계층적 분석 프로세스'
 date: 2024-12-20
 permalink: /posts/2024/12/ahp-platform-development/
+excerpt: "복잡한 의사결정 문제를 체계적으로 해결하기 위한 AHP(Analytic Hierarchy Process) 웹 플랫폼 개발 과정을 공유합니다."
+collection: posts
 tags:
   - AHP
   - React

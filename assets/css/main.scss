@@ -42,8 +42,7 @@ $content-max-width: calc(100% - #{$sidebar-width} - 80px) !default;
     "layout/page",
     "layout/archive",
     "layout/sidebar",
-    "layout/single",
-    "layout/blog-post",
+    "layout/unified-single",
     "layout/json_cv",
     "layout/responsive",
 
@@ -377,27 +376,8 @@ a {
   }
 }
 
-/* Additional fix for blog post layout */
-.layout--single article.page {
-  display: block !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  
-  .page__inner-wrap {
-    width: 100% !important;
-    max-width: 100% !important;
-    display: block !important;
-    
-    .page__content {
-      width: 100% !important;
-      max-width: 100% !important;
-      display: block !important;
-      
-      * {
-        max-width: 100% !important;
-        word-wrap: break-word !important;
-        overflow-wrap: break-word !important;
-      }
-    }
-  }
+/* Ensure proper background */
+body {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-attachment: fixed;
 }

@@ -2,6 +2,8 @@
 title: 'AI 시대의 교육 혁신: 생성형 AI를 활용한 효과적인 교수법'
 date: 2025-01-15
 permalink: /posts/2025/01/ai-education-trends/
+excerpt: "2025년 현재, 생성형 AI는 교육 분야에서 혁명적인 변화를 이끌고 있습니다. 교육 현장에서의 AI 활용법과 효과적인 교수법을 공유합니다."
+collection: posts
 tags:
   - AI 교육
   - 생성형 AI

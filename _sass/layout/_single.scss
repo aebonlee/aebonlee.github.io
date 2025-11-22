@@ -12,6 +12,7 @@
     max-width: $container-max-width;
     margin: 0 auto;
     padding: 2rem;
+    background: transparent;
     
     @include breakpoint($large) {
       padding: 3rem;
