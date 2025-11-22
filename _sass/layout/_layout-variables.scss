@@ -1,0 +1,15 @@
+/* ==========================================================================
+   LAYOUT VARIABLES
+   ========================================================================== */
+
+/* Layout configuration variables */
+$sidebar-width: 300px !default;
+$container-max-width: 1400px !default;
+$content-padding: 40px !default;
+$content-max-width: calc(100% - #{$sidebar-width} - 80px) !default;
+
+/* Breakpoint variables */
+$small: 600px !default;
+$medium: 768px !default;
+$large: 1024px !default;
+$x-large: 1280px !default;
