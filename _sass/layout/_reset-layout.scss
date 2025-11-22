@@ -1,0 +1,468 @@
+/* ==========================================================================
+   RESET AND FIX LAYOUT ISSUES
+   ========================================================================== */
+
+@import "layout-variables";
+
+/* Reset all conflicting styles */
+* {
+  box-sizing: border-box;
+}
+
+/* Main layout structure */
+.layout--single {
+  
+  /* Main container - ensure proper flexbox */
+  #main {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 2rem;
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+    
+    @include breakpoint($medium) {
+      padding: 2.5rem;
+    }
+    
+    @include breakpoint($large) {
+      padding: 3rem;
+    }
+    
+    /* Mobile layout */
+    @media (max-width: $large - 1px) {
+      flex-direction: column !important;
+      padding: 1rem;
+    }
+  }
+  
+  /* Sidebar - fixed width */
+  .sidebar {
+    /* Hide on mobile */
+    @media (max-width: $large - 1px) {
+      display: none;
+    }
+    
+    /* Desktop sidebar */
+    @include breakpoint($large) {
+      display: block !important;
+      flex: 0 0 280px !important;
+      width: 280px !important;
+      min-width: 280px !important;
+      max-width: 280px !important;
+      position: sticky;
+      top: 80px;
+      height: fit-content;
+      max-height: calc(100vh - 100px);
+      overflow-y: auto;
+      background: rgba(255, 255, 255, 0.98);
+      border: 1px solid #e5e5e5;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      
+      body[data-theme="dark"] & {
+        background: rgba(30, 30, 30, 0.98);
+        border-color: #333;
+      }
+    }
+    
+    @include breakpoint($x-large) {
+      flex: 0 0 300px !important;
+      width: 300px !important;
+      min-width: 300px !important;
+      max-width: 300px !important;
+    }
+  }
+  
+  /* Main article - FIXED WIDTH ISSUES */
+  article.page {
+    flex: 1 1 auto !important;
+    min-width: 0 !important; /* Critical for flex children */
+    max-width: calc(100% - 280px - 2rem) !important; /* Account for sidebar */
+    width: 100% !important;
+    display: block !important; /* Not flex */
+    background: rgba(255, 255, 255, 0.98);
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    overflow: hidden; /* Prevent overflow */
+    
+    @media (max-width: $large - 1px) {
+      max-width: 100% !important;
+      margin: 0;
+      padding: 1.5rem;
+    }
+    
+    @include breakpoint($large) {
+      padding: 2.5rem;
+    }
+    
+    @include breakpoint($x-large) {
+      max-width: calc(100% - 300px - 2rem) !important;
+      padding: 3rem;
+    }
+    
+    body[data-theme="dark"] & {
+      background: rgba(30, 30, 30, 0.98);
+      border-color: #333;
+    }
+  }
+  
+  /* Inner wrapper - FIX WIDTH */
+  .page__inner-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: block !important;
+    overflow: hidden !important;
+    
+    /* Header */
+    header {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 2px solid #e5e5e5;
+      
+      .page__title {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 0 1rem 0;
+        padding: 0;
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 1.3;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        
+        @include breakpoint($large) {
+          font-size: 2.25rem;
+        }
+        
+        /* Remove after pseudo element */
+        &::after {
+          display: none !important;
+        }
+      }
+      
+      .page__meta,
+      .page__date {
+        display: inline-block;
+        margin-right: 1rem;
+        color: #666;
+        font-size: 0.9rem;
+        
+        i {
+          margin-right: 0.25rem;
+        }
+      }
+    }
+  }
+  
+  /* Page content - FIX WIDTH AND OVERFLOW */
+  .page__content {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: block !important;
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+    overflow: hidden !important;
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    
+    /* All children should respect max width */
+    * {
+      max-width: 100% !important;
+      word-wrap: break-word !important;
+    }
+    
+    /* Headers */
+    h1, h2, h3, h4, h5, h6 {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      line-height: 1.3;
+      word-wrap: break-word;
+    }
+    
+    h1 { font-size: 1.75rem; }
+    h2 { 
+      font-size: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #e5e5e5;
+    }
+    h3 { font-size: 1.25rem; }
+    h4 { font-size: 1.125rem; }
+    
+    /* Paragraphs */
+    p {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 0 1.5rem 0;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+    
+    /* Lists */
+    ul, ol {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 0 1.5rem 0;
+      padding-left: 2rem;
+      
+      li {
+        margin-bottom: 0.5rem;
+        word-wrap: break-word;
+      }
+    }
+    
+    /* Code blocks */
+    pre {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 1.5rem 0;
+      padding: 1rem;
+      background: #f5f7fa;
+      border: 1px solid #e5e5e5;
+      border-radius: 6px;
+      overflow-x: auto;
+      
+      code {
+        background: none;
+        padding: 0;
+      }
+    }
+    
+    /* Tables */
+    table {
+      width: 100% !important;
+      max-width: 100% !important;
+      display: block;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      border-collapse: collapse;
+    }
+    
+    /* Images */
+    img {
+      max-width: 100% !important;
+      height: auto;
+      display: block;
+      margin: 1.5rem auto;
+    }
+    
+    /* Blockquotes */
+    blockquote {
+      width: calc(100% - 3rem) !important;
+      margin: 1.5rem 0;
+      padding: 1rem 1.5rem;
+      background: #f8f9fa;
+      border-left: 4px solid #5e72e4;
+      
+      p:last-child {
+        margin-bottom: 0;
+      }
+    }
+    
+    /* Links */
+    a {
+      color: #5e72e4;
+      text-decoration: none;
+      border-bottom: 1px dotted #5e72e4;
+      
+      &:hover {
+        color: #4c63d2;
+        border-bottom-style: solid;
+      }
+    }
+    
+    /* Horizontal rules */
+    hr {
+      width: 100% !important;
+      margin: 2rem 0;
+      border: 0;
+      border-top: 1px solid #e5e5e5;
+    }
+  }
+  
+  /* Footer */
+  footer.page__meta {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e5e5e5;
+    
+    .page__taxonomy {
+      width: 100% !important;
+      margin-bottom: 1rem;
+      
+      a {
+        display: inline-block;
+        margin: 0.25rem 0.5rem 0.25rem 0;
+        padding: 0.25rem 0.75rem;
+        background: #f8f9fa;
+        border: 1px solid #e5e5e5;
+        border-radius: 20px;
+        font-size: 0.875rem;
+        text-decoration: none;
+        
+        &:hover {
+          background: #5e72e4;
+          color: white;
+          border-color: #5e72e4;
+        }
+      }
+    }
+  }
+  
+  /* Share section */
+  .page__share {
+    width: 100% !important;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e5e5e5;
+    
+    h4 {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+    
+    .btn {
+      display: inline-block;
+      margin: 0.25rem;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* Pagination */
+  .pagination {
+    width: 100% !important;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e5e5e5;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    
+    a {
+      flex: 1;
+      padding: 0.75rem;
+      background: #f8f9fa;
+      border: 1px solid #e5e5e5;
+      border-radius: 6px;
+      text-align: center;
+      text-decoration: none;
+      
+      &:hover:not(.disabled) {
+        background: #5e72e4;
+        color: white;
+        border-color: #5e72e4;
+      }
+      
+      &.disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+/* Archive pages - common section styling */
+.layout--archive {
+  #main {
+    display: flex;
+    gap: 2rem;
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding: 2rem;
+    
+    @media (max-width: $large - 1px) {
+      flex-direction: column;
+      padding: 1rem;
+    }
+  }
+  
+  .sidebar {
+    @include breakpoint($large) {
+      flex: 0 0 280px;
+      position: sticky;
+      top: 80px;
+      height: fit-content;
+      background: rgba(255, 255, 255, 0.98);
+      border: 1px solid #e5e5e5;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+  }
+  
+  .archive {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.98);
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    
+    @media (max-width: $large - 1px) {
+      padding: 1.5rem;
+    }
+  }
+  
+  .archive__item {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    background: #f8f9fa;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-color: #5e72e4;
+    }
+    
+    .archive__item-title {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.25rem;
+      
+      a {
+        color: #333;
+        text-decoration: none;
+        
+        &:hover {
+          color: #5e72e4;
+        }
+      }
+    }
+    
+    .archive__item-excerpt {
+      margin: 0;
+      color: #666;
+      line-height: 1.6;
+    }
+  }
+}
+
+/* Home page specific */
+.layout--home,
+.layout--splash {
+  .archive__item {
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+}
